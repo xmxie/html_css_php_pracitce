@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>灵犀科技</title>
+    <style>
+    *{
+        margin:0px;
+        padding: 0px;
+    }
+    #main{
+        width:1002px;
+        height: 962px;
+        border: 1px solid greenyellow;
+        margin: 0 auto;
+    }
+    #top{
+        width: 1002px;
+        height: 128px;
+        background:url(images/top_bg.jpg);
+        margin:0 auto;
+        border:1px solid black;
+        }
+        #top_logo{
+            width:281px;
+            height:87px;
+            margin: 0px;
+           /*  border:1px solid red; */
+        }
+        .top_title{
+            float:left;
+            /*  border:1px solid red; */
+            font-size:16px;
+            margin-top:-3px;
+            margin-right:1px;
+            height:42px; 
+            width:90px;
+            line-height: 37px;
+            text-align: center;
+            }
+        .top_title:hover{
+            height:37px; width:86px;
+            color:white;
+            background: url(images/pj2/nav_on.gif);
+        }
+        .top_title_input{
+            height:30px;
+            width:270px;
+            float:right;
+        }
+    #mid{
+        width:1002px;
+        height: 240px;
+        border: 1px solid silver;
+    }
+    #dosd{
+        width:1002px;
+        height:530px;
+        border: 1px solid silver;
+    }
+    #dosd_lf{
+        width:300px;
+        height: 530px;
+        float:left;
+        border: 1px solid rgb(54, 161, 223);
+    }
+    #dosd_lf_top{
+        width:300px;
+        height:35px;
+        background-image: url("images/pj2/subpage_nav_left_corner.gif");
+        line-height: 35px;
+        /* border: 1px solid rgb(245, 18, 215); */
+    }
+    #dosd_lf_cont{
+        width:300px;
+        height: 150px;
+        border: 1px solid rgb(245, 18, 215);
+    }
+    .dosd_lf_cont_li{
+        width:280px;
+        height:28px;
+        list-style:url("images/pj2/article_head.gif");
+        line-height: 28px;
+        
+    }
+    #dosd_rt{
+        width:676px;
+        height: 530px;
+        float:left;
+        border: 1px solid rgb(54, 161, 223);
+        margin-left: 20px;
+    }
+    #dosd_rt_top{
+        width:676px;
+        height:35px;
+        background-image: url("images/pj2/subpage_nav_left_corner.gif");
+        line-height: 35px;
+        /* border: 1px solid rgb(0, 252, 0); */
+    }
+    #dosd_rt_cont{
+        width:676px;
+        height:459px;
+        /* border: 1px solid rgb(0, 252, 0); */
+    }
+    .box{
+        width:676px;
+        height:153px;
+        border: 1px solid rgb(251, 255, 0);
+    }
+    #page{
+        width:676px;
+        height: 30px;
+        border: 1px solid red;
+    }
+    #bottom{
+        width: 1002px;
+        height: 60px;
+        border: 1px solid black;
+    }
+    .circle{
+        width:21px;
+        height:22px;
+        float:left;
+        margin-top: 3px;
+        margin-left:4px;
+    }
+    .title{
+        width:100px;
+        height:22px;
+        float:left;
+        margin-left:10px;
+        color:#929292;
+    }
+    
+    </style>
+</head>
+<body>
+    <div id='main'>
+        <div id='top'>
+            <img id='top_logo' src="images/logo.jpg" alt="" ><br>
+            <div class=top_title style="margin-left: 3px">&nbsp;&nbsp;首页</div>
+            <div class=top_title><div class='top_title_a' >产品&技术</div></div>
+            <div class=top_title><div class='top_title_a' >业务介绍</div></div>
+            <div class=top_title><div class='top_title_a' >精品案例</div></div>
+            <div class=top_title><div class='top_title_a' >关于灵犀</div></div>
+            <div class=top_title><div class='top_title_a' >文章观点</div></div>
+            <div class=top_title><div class='top_title_a' >联系我们</div></div>
+            <div class=top_title_input style="margin-top:6px;"><input type="text" size='26px' placeholder="search"></div>
+        </div>
+        <div id='mid'>
+            <img src="images/pj2/works_banner.jpg" style="margin-top:3px;">
+        </div>
+        <div id='dosd'>
+            <div id='dosd_lf'>
+                <div id='dosd_lf_top'>
+                    <div class='circle'> <img src="images/pj2/circle.gif" alt=""></div>
+                    <div class='title'><b>精品案例</b></div>
+                </div>
+                <div id=dosd_lf_cont>
+                    <ul>
+                        <div class='dosd_lf_cont_li'><li>企业网站实例</li></div>
+                    </ul>
+                </div>
+            </div>
+            <div id='dosd_rt'>
+                <div id='dosd_rt_top'>
+
+                </div>
+                <div id='dosd_rt_cont'>
+                    <div class='box'></div>
+                    <div class='box'></div>
+                    <div class='box'></div>
+                    <div id='page'></div>
+                </div>
+            </div>
+        </div>
+        <div id= 'bottom'>
+
+        </div>
+    </div>
+</body>
+</html>

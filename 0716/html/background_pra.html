@@ -19,28 +19,51 @@
     }
     .try{
         width:1200px;
-        height: 70px;
-        border: 1px solid red;
+        height: 50px;
+        background: yellow;
         margin: 100px auto;
     }
     .try_m{
         width:120px;
-        height: 70px;
-        border-left:1px solid green;
-        border-right:1px solid green;
+        height: 50px;
+        float:left;
+        background-color:yellow;
+      /*   border-right:1px solid gray;  */
+        line-height: 50px;
+        text-align: center;
     }
-    .try_m :hover{
-        border-left:0px;
-        border-right:0px;
-        background-color:green;
+    .try_m:hover{
+        background-color:orange;
+        width:121px;
+        border-right:1px solid yellow;
+        box-sizing:border-box; 
+        margin-left: -1px;
+        margin-right: -1px;
     }
+    .line{
+        width:0px;
+        height: 20px;
+        border-left:1px solid gray;
+        float:left;
+        margin-top:15px;
+         }
     </style>
     
 </head>
 <body>
     <div class='back'></div>
     <div class='try'>
-        <div class='try_m';></div>
+        <div class='try_m' style="border-left:0px">标题</div>
+        <div class='line'></div>
+        <div class='try_m';>标题</div>
+        <div class='line'></div>
+        <div class='try_m';>标题</div>
+        <div class='line'></div>
+        <div class='try_m';>标题</div>
+        <div class='line'></div>
+        <div class='try_m';>标题</div><div class='line'></div>
+        <div class='try_m';>标题</div><div class='line'></div>
+        <div class='try_m' style="border-right:0px">标题</div>
     </div>
 </body>
 </html>
