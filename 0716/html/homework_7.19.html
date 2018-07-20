@@ -10,6 +10,10 @@
         margin:0px;
         padding: 0px;
     }
+    a{
+        text-decoration:none;
+        color:gray;
+    }
     #main{
         width:1002px;
         height: 962px;
@@ -23,33 +27,33 @@
         margin:0 auto;
         border:1px solid black;
         }
-        #top_logo{
-            width:281px;
-            height:87px;
-            margin: 0px;
-           /*  border:1px solid red; */
+    #top_logo{
+        width:281px;
+        height:87px;
+        margin: 0px;
+        /*  border:1px solid red; */
+    }
+    .top_title{
+        float:left;
+        /*  border:1px solid red; */
+        font-size:16px;
+        margin-top:-3px;
+        margin-right:1px;
+        height:42px; 
+        width:90px;
+        line-height: 37px;
+        text-align: center;
         }
-        .top_title{
-            float:left;
-            /*  border:1px solid red; */
-            font-size:16px;
-            margin-top:-3px;
-            margin-right:1px;
-            height:42px; 
-            width:90px;
-            line-height: 37px;
-            text-align: center;
-            }
-        .top_title:hover{
-            height:37px; width:86px;
-            color:white;
-            background: url(images/pj2/nav_on.gif);
-        }
-        .top_title_input{
-            height:30px;
-            width:270px;
-            float:right;
-        }
+    .top_title:hover{
+        height:37px; width:86px;
+        color:white;
+        background: url(images/pj2/nav_on.gif);
+    }
+    .top_title_input{
+        height:30px;
+        width:270px;
+        float:right;
+    }
     #mid{
         width:1002px;
         height: 240px;
@@ -64,26 +68,46 @@
         width:300px;
         height: 530px;
         float:left;
-        border: 1px solid rgb(54, 161, 223);
+        /* border: 1px solid red; */
     }
     #dosd_lf_top{
         width:300px;
         height:35px;
-        background-image: url("images/pj2/subpage_nav_left_corner.gif");
+       /*  background: url("images/pj2/sub_left_nav_bg.gif") no-repeat; */
+        background: url("images/pj2/sub_bar_title_bg.gif") no-repeat;
+     /*    background: url("images/pj2/sub_right_nav_bg.gif") no-repeat; */
         line-height: 35px;
         /* border: 1px solid rgb(245, 18, 215); */
     }
     #dosd_lf_cont{
-        width:300px;
+        width:294px;
         height: 150px;
-        border: 1px solid rgb(245, 18, 215);
+    /*  border: 1px solid rgb(245, 18, 215); */
+    }
+    .dosd_lf_cont_ul{
+        width: 294px;
+        height:150px;
+        float:left;
+        font-size:14px;
+        margin-left:0px;
+        list-style:none;
+        line-height:32px;
+    /*   border:1px solid green; */
     }
     .dosd_lf_cont_li{
-        width:280px;
-        height:28px;
-        list-style:url("images/pj2/article_head.gif");
-        line-height: 28px;
-        
+        width: 294px;
+        height:30px;
+        float:left;
+        font-size:10px;
+        margin-left:0px;
+        /* margin-top:1px; */
+        list-style:none;
+        line-height:30px;
+        background-color: #f1f1f1;
+    }
+    .dosd_lf_cont_li:hover{
+        background:url("images/pj2/article_on_head.gif") no-repeat;
+        background: url("images/pj2/article_bg.gif");
     }
     #dosd_rt{
         width:676px;
@@ -95,8 +119,10 @@
     #dosd_rt_top{
         width:676px;
         height:35px;
-        background-image: url("images/pj2/subpage_nav_left_corner.gif");
+        background: url("images/pj2/subpage_nav_left_corner.gif");
         line-height: 35px;
+        font-size: 12px;
+        color:#929292;
         /* border: 1px solid rgb(0, 252, 0); */
     }
     #dosd_rt_cont{
@@ -106,25 +132,53 @@
     }
     .box{
         width:676px;
-        height:153px;
-        border: 1px solid rgb(251, 255, 0);
+        height:156px;
+    /*  border: 1px solid rgb(251, 255, 0); */
     }
+
     #page{
-        width:676px;
-        height: 30px;
-        border: 1px solid red;
+        width:600px;
+        height: 20px;
+        /* border: 1px solid red; */
+        float:right;
+        text-align: right;
+        margin-right: 10px;
+        font-size:10px;
     }
-    #bottom{
+    .bottom{
         width: 1002px;
-        height: 60px;
-        border: 1px solid black;
+        height: 30px;
+        /* border:1px solid black; */
+        background:#eee;
+        margin-top:15px;
+        margin-bottom: 15px;
     }
+    .bottom_title{
+        width:600px;
+        height:30px;
+        float:left;
+        margin-top: 4px;
+        text-align:right;
+/*         border:1px solid blue;
+ */        font-size:8px;
+        list-style:none;
+    }
+    .bottom_title li{ 
+        width:93px;
+        height:22px;
+        float:left;
+        margin-top: 4px;
+        text-align:right;
+/*         border:1px solid red;
+ */        font-size:8px; }
+    .bottom_a a{color:rgb(126, 126, 126)}
     .circle{
         width:21px;
         height:22px;
         float:left;
         margin-top: 3px;
         margin-left:4px;
+        /* border:1px solid #f29292 */
     }
     .title{
         width:100px;
@@ -133,6 +187,22 @@
         margin-left:10px;
         color:#929292;
     }
+    .image{
+        width:185px;
+        height: 144px;
+        padding:14px 10px 0px 2px;
+        float: left;
+        box-sizing: border-box;
+       /*  border:1px solid red; */
+    }
+    .article{
+        width:474px;
+        height:156px;
+        float:left;
+        font-size: 12px;
+        color:#929292;
+    }
+    article h3{color: black;}
     
     </style>
 </head>
@@ -147,7 +217,8 @@
             <div class=top_title><div class='top_title_a' >关于灵犀</div></div>
             <div class=top_title><div class='top_title_a' >文章观点</div></div>
             <div class=top_title><div class='top_title_a' >联系我们</div></div>
-            <div class=top_title_input style="margin-top:6px;"><input type="text" size='26px' placeholder="search"></div>
+            <div class=top_title_input style="margin-top:6px;"><input style="border: 0px;outline:none
+                " type="text" size='26px' placeholder="search"></div>
         </div>
         <div id='mid'>
             <img src="images/pj2/works_banner.jpg" style="margin-top:3px;">
@@ -155,29 +226,90 @@
         <div id='dosd'>
             <div id='dosd_lf'>
                 <div id='dosd_lf_top'>
-                    <div class='circle'> <img src="images/pj2/circle.gif" alt=""></div>
-                    <div class='title'><b>精品案例</b></div>
+                    <div class='title' style="margin-left:42px"><b>精品案例</b></div>
                 </div>
                 <div id=dosd_lf_cont>
-                    <ul>
-                        <div class='dosd_lf_cont_li'><li>企业网站实例</li></div>
+                    <ul class='dosd_lf_cont_ul'>
+                        <div class='dosd_lf_cont_li'><li>
+                            <div class='circle' style="margin:0px"> 
+                                <img src="images/pj2/article_head.gif" alt=""></div>
+                                &nbsp;&nbsp;&nbsp;<a href="www">企业网站实例</a></li></div>
+                        <div class='dosd_lf_cont_li'><li>
+                            <div class='circle' style="margin:0px"> 
+                                <img src="images/pj2/article_head.gif" alt=""></div>
+                                &nbsp;&nbsp;&nbsp;<a href="www">企业网站实例</a></li></div>
+                        <div class='dosd_lf_cont_li'><li>
+                            <div class='circle' style="margin:0px"> 
+                                <img src="images/pj2/article_head.gif" alt=""></div>
+                                &nbsp;&nbsp;&nbsp;<a href="www">企业网站实例</a></li></div>
+                        <div class='dosd_lf_cont_li'><li>
+                            <div class='circle' style="margin:0px"> 
+                                <img src="images/pj2/article_head.gif" alt=""></div>
+                                &nbsp;&nbsp;&nbsp;<a href="www">企业网站实例</a></li></div>
+                        <div class='dosd_lf_cont_li'><li>
+                            <div class='circle' style="margin:0px"> 
+                                <img src="images/pj2/article_head.gif" alt=""></div>
+                                &nbsp;&nbsp;&nbsp;<a href="www">企业网站实例</a></li></div>
                     </ul>
                 </div>
             </div>
             <div id='dosd_rt'>
                 <div id='dosd_rt_top'>
-
+                    <div class='circle'> <img src="images/pj2/position.gif" alt=""></div>
+                    <div class='title'>首页->精品案例</div>
                 </div>
                 <div id='dosd_rt_cont'>
-                    <div class='box'></div>
-                    <div class='box'></div>
-                    <div class='box'></div>
-                    <div id='page'></div>
+                    <div class='box'>
+                        <div class='image'><img  src="./images/pj2/case.jpg" alt=""></div> 
+                        <div class='article' style="margin-top:6px; height:152px;">
+                                <h3>无锡灵犀科技有限公司</h3><br>
+                                
+                                Lingsee Technology Co,. Ltd.简称灵犀科技，
+                                是一家专注于管理系统软件及相关硬件、互联网、移动互联网开发和相关培训、
+                                咨询等一体化服务的科技公司。了解更多...
+                        </div>
+                    </div>
+                    <div class='box'>
+                        <div class='image'><img  src="./images/pj2/case.jpg" alt=""></div> 
+                        <div class='article'>
+                                <h3>无锡灵犀科技有限公司</h3><br>Lingsee Technology Co,. Ltd.简称灵犀科技，
+                                是一家专注于管理系统软件及相关硬件、互联网、移动互联网开发和相关培训、
+                                咨询等一体化服务的科技公司。了解更多...
+                        </div>
+                    </div>
+                    <div class='box'>
+                        <div class='image'><img  src="./images/pj2/case.jpg" alt=""></div> 
+                        <div class='article'>
+                                <h3>无锡灵犀科技有限公司</h3><br>Lingsee Technology Co,. Ltd.简称灵犀科技，
+                                是一家专注于管理系统软件及相关硬件、互联网、移动互联网开发和相关培训、
+                                咨询等一体化服务的科技公司。了解更多...
+                        </div>
+                    </div>
+                    <div id='page'>
+                        <a href="www">上一页</a>
+                        <a href="www">1</a>
+                        <a href="www">2</a>
+                        <a href="www">3</a>
+                        <a href="www">4</a>
+                        <a href="www">5</a>
+                        <a href="www">6</a>
+                        <a href="www">下一页</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div id= 'bottom'>
-
+        <div class='bottom'>
+            <ul class='bottom_title'>
+            <li style="width:102px"><a href="wwww">&nbsp;&nbsp;关于灵犀工作室 &nbsp;&nbsp;|</a></li>
+            <li><a href="www">&nbsp;&nbsp;支付方式 &nbsp;&nbsp;|</a> </li>
+            <li><a href="www">&nbsp;&nbsp;网站地图 &nbsp;&nbsp;|</a></li>
+            <li><a href="www">&nbsp;&nbsp;友情链接 &nbsp;&nbsp;|</a></li>
+            <li><a href="www">&nbsp;&nbsp;灵犀形象 &nbsp;&nbsp;|</a></li>
+            <li><a href="www">&nbsp;&nbsp;合作伙伴</a></li>
+            </ul>
+        </div>
+        <div class='bottom' style="background-color:white; font-size:6px; color:gray; ">
+            $2005-2008 北京市灵犀工作室 版权所有 http://www.lionhit.com 京ICP备07020337
         </div>
     </div>
 </body>
