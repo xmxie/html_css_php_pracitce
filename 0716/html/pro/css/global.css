@@ -601,6 +601,7 @@ ul{
     position: relative;
     top:0px;
     left: 7px;
+    list-style: none;
 }
 .list li{
     width:750px;
@@ -629,7 +630,7 @@ ul{
 
 /* 页码 */
 .page{float: right;position: absolute; right:28px; bottom:10px;}
-.page li{float: left;border:1px solid #eaeaea;height: 20px;min-width: 10px;padding:2px 3px;margin:10px 5px;}
+.page li{float: left;border:1px solid #eaeaea;height: 20px;min-width: 10px;padding:2px 3px;margin:10px 5px;color:#aaaaaa;}
 .page a:hover{color:blue}
 /* .page :last-child{margin-right:28px;} */
 
@@ -813,20 +814,21 @@ ul{
     position: fixed;
     right:11%;bottom:2%;
     border:2px solid #4489c2;border-radius: 5px;box-sizing: border-box;border-top: none;
+    float:left;
 }
 .iwannaMessage_input1{
-    width:190px;height: 100px;border:0;
-    background: url("../images/iwant_message_r1_c2.jpg");position: relative;left: 7px;margin-top:10px;
+    width:185px;height: 100px;border:0;line-height: 30px; position: relative;left: 7px;margin-top:10px;font-size: 18px;padding-left: 5px;
+    background: url("../images/iwant_message_r1_c2.jpg");
 }
 .iwannaMessage_input2{
-    width:190px;height:30px;border:0;
-    background:url("../images/iwant_message_r5_c2.jpg");position: relative;left: 7px;margin-top:10px;
+    width:185px;height:30px;border:0;
+    background:url("../images/iwant_message_r5_c2.jpg");position: relative;left: 7px;margin-top:10px;padding-left: 5px;
 }
 .iwannaMessage_yzm{margin:10px 0px 0px 10px;}
 .iwannaMessage a{font-size: 10px;color:blue;margin-left: 30px;}
 .iwannaMessage a:hover{color:red}
 .iwannaMessage_push{ width:194px;height:54px;background: url("../images/iwant_message_r11_c1.jpg") no-repeat;
-    text-align: center;position:  relative;left:9px;line-height: 54px;color:white;font-size:18px}
+    text-align: center;position:  relative;left:9px;line-height: 54px;color:white;font-size:18px;border:0px;}
 .iwannaMessage_push:hover{background:url("../images/iwant_message_r11_c1_hover.jpg")}
 
 /* 下载列表 */

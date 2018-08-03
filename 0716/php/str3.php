@@ -11,4 +11,5 @@
     $strOrg=file_get_contents($path);
     $strAdd="this is a string for add\n";
     file_put_contents($path,$strOrg.$strAdd);
+    echo file_get_contents($path);
 ?>
