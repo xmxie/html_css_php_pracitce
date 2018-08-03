@@ -1,0 +1,58 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Apply JavaScript example</title>
+  </head>
+  <body>
+    <button>Click me</button>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            function createParagraph() {
+            var para = document.createElement('p');
+            para.textContent = 'You clicked the button!';
+            document.body.appendChild(para);
+            }
+
+            var buttons = document.querySelectorAll('button');
+
+            for(var i = 0; i < buttons.length ; i++) {
+            buttons[i].addEventListener('click', createParagraph);
+            }
+            });
+    </script>
+  </body>
+</html>  -->
+
+<html>
+<head>
+
+<style>
+  *{margin:0;
+  padding:0;}
+  img{float:left};
+</style>
+
+<script type="text/javascript">
+function getEventTrigger(event)
+  { 
+  x=event.target; 
+  var y=document.getElementById(x.id);
+  if(y.style.background==''){
+  y.style.background="red";}
+  else{y.style.background=''}
+  }
+</script>
+
+</head>
+<body >
+<!-- 
+<p id="1111" onclick="getEventTrigger(event)">
+Click on this paragraph. An alert box will
+show which element triggered the event.</p> -->
+
+<img src="../js/images/1.jpg" alt=""><img src="../js/images/2.jpg" alt="">
+
+</body>
+</html>

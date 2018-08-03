@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transition</title>
+    <style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    .fixbox{
+        width:50px;
+        height: 50px;
+        position: fixed;
+        z-index: 1;
+        right:0;
+        top: 60%;
+        background: red;
+    }
+    .hoverbox{
+        width:300px;
+        height:100px;
+        position:fixed;
+        z-index: 0;
+        right:-300px;
+        top:60%;
+        background: green;
+    }
+    .fixbox:hover +.hoverbox{
+        right:50px;
+        transition: all 1s;
+    }
+    .hoverbox:hover{
+        right:50px;
+    }
+    </style>
+</head>
+<body>
+    <div class=fixbox></div>
+     <div class=hoverbox></div>
+</body>
+</html>

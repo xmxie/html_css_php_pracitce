@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定位</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .bg{
+            width:1920px;
+            height: 251px;
+            position:relative;
+            top:200px;
+        }
+        .img1{
+            position: absolute;
+            left:550px;
+            top:25px;
+        }
+        .img2{
+            position: absolute;
+            left:685px;
+            top:170px;
+        }
+        .img3{
+            position: absolute;
+            left:832px;
+            top:32px;
+        }
+        .img4{
+            position: absolute;
+            left:970px;
+            top:180px;
+        }
+        .img5{
+            position: absolute;
+            left:1120px;
+            top:40px;
+        }
+        .img2_relative{
+            position: absolute;
+            left:135px;
+            top:145px;
+        }
+        .img3_relative{
+            position: absolute;
+            left:284px;
+            top:8px;
+        }
+        .img4_relative{
+            position: absolute;
+            left:284px;
+            top:8px;
+        }
+        .fixed{
+            position:fixed;
+            right:0px;
+            bottom:0px;
+            width: 200px;
+            height:140px;
+            background:greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class=bg>
+        <img src="./images/背景图.jpg" alt="">
+        <!-- <img src="./images/1.png" class=img1>
+        <img src="./images/2.png" class=img2>
+        <img src="./images/3.png" class=img3>
+        <img src="./images/4.png" class=img4> 
+        <img src="./images/5.png" class=img5>   由背景定位-->
+        <div class=img1>
+            <img src="./images/1.png" alt="">
+            <img src="./images/2.png" class=img2_relative>
+            <div class=img3_relative>
+            <img src="./images/3.png">
+            <img src="./images/4.png" class=img2_relative>
+            <img src="./images/5.png" class=img3_relative>  <!-- 以图一定位 -->
+            </div>
+        </div>
+        <div class=fixed></div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>延时提示框</title>
+    <style>
+    .box{width:200px;height: 100px;position: relative;/* background: red; */border:1px solid red;float:left;}
+    .content{width:400px;height: 500px;float:left;/* display:none */border:1px solid red;margin-left: -1px;display: none;}
+    </style>
+</head>
+<body>
+    <div class=box onmouseover="show()" onmouseout="hide()"></div>
+    <div class=content id=cont onmouseover="stop()" onmouseout="hide()"></div>
+
+
+</body>
+</html>
+
+<script>
+    var t;
+    var odiv=document.getElementsByTagName("div");
+    function show(){
+        odiv[1].style.display="block";
+        odiv[0].style.borderRight="1px solid white";
+    }
+    function hide(){
+        t=setTimeout("odiv[1].style.display='none';odiv[0].style.borderRight='1px solid red';",500) 
+    }
+    function stop(){
+        clearTimeout(t);
+    }
+</script>

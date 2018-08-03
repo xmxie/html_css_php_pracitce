@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transition_pra</title>
+    <style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    .box{
+        width:200px;
+        height: 200px;
+        background: #3064bb;
+        position: absolute;
+        overflow: hidden;
+        left:40%;
+        top:30%;
+        text-align: center;
+        }
+    .cover1{
+        width:200px;
+        height: 200px;
+        background: rgba(100, 100, 100, 0.2);
+        position: absolute;
+        top:0px;
+    }
+    .cover2{
+        width:200px;
+        height: 200px;
+        background: rgba(100, 100, 100, 0.2);
+        position: absolute;
+        bottom:0px;
+        /* display: none; */
+    }
+    .box:hover .cover1{
+        top:200px;
+        transition:all 0.5s;
+    }
+    .box:hover .cover2{
+        bottom:200px;
+        transition:all 0.5s;
+    }
+    .image{
+        width:500px;
+        height: 500px;
+        position: relative;
+        left:10%;
+        top:10%;
+        background: url("./images/angle.jpg");
+        overflow: hidden;
+    }
+    .imagecover1{
+        width:500px;
+        height: 500px;
+        position: relative;
+        left:500px;
+        top:0px;
+        background: #666;
+    }
+    .image:hover .imagecover1{
+        left:0px;
+    }
+
+    </style>
+</head>
+<body>
+   
+    <div class=box> 
+        嘤嘤嘤
+        <div class=cover1></div>
+        <div class=cover2></div> <!-- overflow隐藏 -->
+    </div><!-- 框层叠加 -->
+    <!-- <div class=image>
+        <div class=imagecover1></div>
+    </div> -->
+</body>
+</html>

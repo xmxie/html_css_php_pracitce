@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transform</title>
+    <style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    .box1{
+        width:50px;
+        height: 100px;
+        position: absolute;
+        background:deepskyblue;
+        transform-origin: -25px 25px;
+        transform:rotate(90deg);
+        font-size: 14px;
+        text-align: center;
+    }
+    .box2{
+        width:50px;
+        height: 100px;
+        position: absolute;
+        background:rgba(100, 182, 235,1);
+        right:50px;;
+        top:200px;
+        /* overflow: hidden; */
+    }
+    .box2:hover .box1{
+        /* transform: scale(1.5,1.5); */
+        transform: rotate(0deg);
+        transform-origin: right top;
+        transition: all 1s;
+    }
+    .box3{
+        width:50px;
+        height: 100px;
+        background:deepskyblue;
+        margin:100px 100px;
+        transform:skew(30deg,30deg);
+    }
+    </style>
+</head>
+<body>
+    <!-- <div class=box2>
+        <div class=box1>内容</div>
+    </div> -->
+    <div class=box3>
+        CONTENT
+    </div>
+</body>
+</html>

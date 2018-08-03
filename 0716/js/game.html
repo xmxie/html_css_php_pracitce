@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点方块</title>
+    <style>
+        .main{width:1000px;height: 600px;border:1px solid black;position: relative;overflow: hidden;}
+        .box{width:50px;height: 50px;background: black;position: absolute;border:1px solid red;}
+        input{width:20px;}
+    </style>
+</head>
+<body>
+    <div class=main id=main>
+        <h3>goal:0</h3>
+        <h3>miss:0</h3>
+        speed<input type="text" value=10 ><br>
+        max<input type="text" value=5 ><br>
+        <input type="button" value=确认 style='width:initial'>
+    </div>
+</body>
+</html>
+<script>
+    var main=document.getElementById("main");
+    var input=document.getElementsByTagName("input");
+    var abox;
+    var max=5
+    var message=main.getElementsByTagName('h3');
+    var goal=0;
+    var miss=0;
+    var ogame=null;
+    var agame=null;
+    var speed=10;
+    var time=150;
+    var rate=7500/max;
+    input[2].onclick=function(){
+        speed=parseInt(input[0].value);
+        max=parseInt(input[1].value);
+        rate=7500/parseInt(max);
+        // alert(speed,max)
+    }
+    function play(){
+        abox=document.createElement('div');
+        abox.className='box';
+        abox.style.left=Math.random()*950+'px';
+        abox.style.top=0;
+        abox.onclick=function(){
+            main.removeChild(this);
+            goal++;
+            message[0].innerText="goal:"+goal;
+        }
+        var obox=main.getElementsByClassName('box');
+        if(obox.length<max){
+            main.appendChild(abox);
+        }
+        for(var i=0;i<obox.length;i++){
+            if(parseInt(obox[i].style.top)>=510){
+                main.removeChild(obox[i]);
+                ++miss;
+                message[1].innerText='miss:'+miss;
+            }
+        }   
+    }
+    ogame=setInterval('play()',rate)
+    agame=setInterval(function(){
+        var obox=main.getElementsByClassName('box');
+        for(var i=0;i<obox.length;i++){
+            obox[i].style.top=parseInt(obox[i].style.top)+speed+'px';
+        }
+    },time)
+</script>

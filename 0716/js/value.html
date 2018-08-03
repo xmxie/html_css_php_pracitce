@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Value</title>
+    <style>
+    </style>
+</head>
+<body>
+    <input type="text" id=input1 size=5>&nbsp;&nbsp;&nbsp;&nbsp;<select name="" id="select">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select> <input type="text" id=input2 size=5><input type="button" value="=" onclick="plus()">
+    <input type='text' id=result size="2">
+
+    
+</body>
+</html>
+
+<script>
+    function plus(){
+        var num1=document.getElementById("input1");
+        var num2=document.getElementById("input2");
+        var rules=document.getElementById("select");
+        var result=document.getElementById("result");
+        if(rules.value=='+'){
+        result.value=parseInt(num1.value)+parseInt(num2.value);}
+        if(rules.value=='-'){
+        result.value=parseInt(num1.value)-parseInt(num2.value);}
+        if(rules.value=='*'){
+        result.value=parseInt(num1.value)*parseInt(num2.value);}
+        if(rules.value=='/'){
+        result.value=parseInt(num1.value)/parseInt(num2.value);}
+    }
+    </script>

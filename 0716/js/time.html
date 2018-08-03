@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding: 0;}
+        .main,.origin{position:absolute;width:100%;height: 100%;background:orange;}
+        .main{display:none;background:rgba(168,90,0,0.7)}
+        .login{width:400px;height: 400px;position: absolute;left:35%;top:20%;background: white;}
+    </style>
+
+</head>
+<body>
+
+    <div class=origin>
+        <input type="button" value="stop" id="test" onclick="stop()">
+        <input type="button" name="login" id="button" value="登录">
+    </div>
+    <div class='main'><div class=login><p style=display:inline;border:1px solid red;></div></div>
+
+</body>
+</html>
+
+<script>
+    var odiv=document.getElementsByTagName("div");
+    var obutton=document.getElementById("button");
+    var t=null;
+    var time=4;
+    obutton.onclick=function(){
+        odiv[2].innerHTML="<p style=display:inline;border:1px solid red;>窗口关闭还有5s</p>"+
+        "<input type='button' value='退出' style='margin-left: 300px;'onclick=exit()>";
+        odiv[1].style.display='block';
+        t=setInterval("run()",1000);
+       }
+    function exit(){odiv[1].style.display='none';clearInterval(t)}
+   
+    function run(){
+        odiv[2].innerHTML="<p style=display:inline;border:1px solid red;>窗口关闭还有"+time+"s</p>"+
+        "<input type='button' value='退出' style='margin-left: 300px;'onclick=exit()>";
+        if(time<=0){odiv[1].style.display='none';
+        clearInterval(t);time=5}
+        time--;
+    }
+    var test=document.getElementById("test")
+    function stop(){clearInterval(t)}
+</script>onmouseover

@@ -1,0 +1,69 @@
+.login{
+    width:1000px;
+    height: 340px;
+    float: left;
+    background: white;
+    border:1px solid #eaeaea;
+    border-radius: 5px;
+}
+.loginbar{
+    width:400px;
+    height: 260px;
+    float: left;
+    /* border:1px solid #eaeaea; */
+    margin-left:40px;
+    margin-top: 45px;
+}
+.loginbar_title{
+    width:400px;
+    height: 44px;
+    background:url("../images/login_page_r1_c1.jpg") no-repeat;
+    line-height: 44px;
+    font-size: 12px;
+    color: #a9a9a9;
+}
+.loginbar_title h4{
+    margin-left:30px;float: left;font-size:16px;
+}
+.loginbar_input{
+    width:380px;
+    height: 40px;
+    margin:20px 6px;
+    /* border:1px solid red; */
+    font-size:14px;
+}
+.loginbar_input input{
+    width:224px;height: 32px;
+    background: url("../images/login_page_r5_c3.jpg") no-repeat;
+    border:0px;
+}
+.loginbar_input input:hover{
+    background: url("../images/login_page_r3_c3.jpg");
+}
+.loginbar_input font{
+    color:#9f9f9f;
+}
+.loginbar_bottom{
+    width:230px;
+    height: 50px;
+    /* border:1px solid red; */
+    margin:0 56px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    color:#9f9f9f;
+}
+.loginbar_sure{
+    width:80px;
+    height: 35px;
+    background: url("../images/login_page_r7_c4.jpg");
+    float:left;
+    /* border:1px solid red; */
+    color:white;
+}
+.loginad{
+    width:550px;
+    height: 310px;
+    float:left;
+    /* border:1px solid #eaeaea; */
+}

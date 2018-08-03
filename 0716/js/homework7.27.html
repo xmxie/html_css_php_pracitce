@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>乘法</title>
+    <style>
+        .box{width:200px;height: 200px;border:1px solid red;text-align: center;}
+    </style>
+</head>
+<body>
+    <table height=400 width=400 border=1 id=mul>
+        <tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+        <tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+        <tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+        <tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+        <tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+        <tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+        <tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+        <tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+        <tr><td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+    </table>
+
+    <div class=box id='first'></div>
+    <div class=box id='second'></div>
+    <button onclick="this.innerText=this.innerText+'*'">text</button>
+    <script>
+        for(var a=0,row=0;a<9;a++,row++){
+            var table=document.getElementById("mul");
+            var td=table.getElementsByTagName('td');
+            var b=1;
+            for(var c=a*9;c<=a*9+row;c++,b++){
+                td[c].innerText=(a+1)+'*'+b+'='+(a+1)*b;
+            }
+        }
+        var first=document.getElementById('first');
+        var second=document.getElementById('second')
+        for(var j=0,k=1;j<5;j++,k=k+2){
+            for(var count=0;count<k;count++){
+                first.innerHTML=first.innerHTML+'*';}
+            first.innerHTML=first.innerHTML+'<br>';
+        }
+        for(var w=0,q=-1;w<5;w++,q=q+2){
+            second.innerHTML=second.innerHTML+"*";
+            for(var space=0;space<q;space++){
+                if(w==4){
+                second.innerHTML=second.innerHTML+'*';
+                }else{
+                second.innerHTML=second.innerHTML+'&nbsp;&nbsp;';}
+            }
+            if(w==0){
+            second.innerHTML=second.innerHTML+'<br>';
+            }else{second.innerHTML=second.innerHTML+'*<br>';}
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,587 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1">
+<meta name="HandheldFriendly"content="true">
+
+<title>无标题文档</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href='css/style.css' rel='stylesheet' media='screen' />
+<script src="js/jquery.min.js"></script>
+<script src="js/blocksit.min.js"></script>
+<script>
+$(document).ready(function() {
+
+	//blocksit define
+	$(window).load( function() {
+		$('#container').BlocksIt({
+			numOfCol: 3,
+			offsetX: 10,
+			offsetY: 10
+		});
+	});
+	
+	//window resize
+	var currentWidth = 720;
+	$(window).resize(function() {
+		var winWidth = $(window).width();
+		var conWidth;
+		
+		if(winWidth < 1200) {
+			conWidth = 720;
+			col = 3
+		} else if(winWidth < 1000) {
+			conWidth = 720;
+			col = 2
+		} else {
+			conWidth = 720;
+			col = 3;
+		}
+		
+		
+		
+		
+		
+		
+		if(conWidth != currentWidth) {
+			currentWidth = conWidth;
+			$('#container').width(conWidth);
+			$('#container').BlocksIt({
+				numOfCol: col,
+				offsetX: 10,
+				offsetY: 10
+			});
+		}
+	});
+});
+</script>
+
+
+
+
+
+</head>
+
+<body>
+
+<div class="user_top"><!--user_top begin-->
+<div class="pos_mid clearfix"> 
+<div class="left_wel">您好，欢迎来到里蓝O2O系统</div>
+
+<div class="right_menu">
+<div class="menu">
+<a href="#">Jason</a><span>|</span><a href="#"><p>我的订单</p><i></i></a><span>|</span><a href="#">退出</a><span>|</span><a href="#"><p>购物车 0</p><i></i></a><span>|</span><a href="#">商户中心</a></div>
+
+<div class="ttc"><!--ttc begin-->
+<a href="#">个人主页</a>
+<a href="#">我的订单</a>
+<a href="#">我的团购券</a>
+<a href="#">我的优惠券</a>
+<a href="#">账户中心</a>
+<a href="#">账户设置</a>
+<a href="#">退出</a>
+</div><!--ttc end-->
+
+
+</div>
+
+
+</div>
+</div><!--user_top end-->
+
+
+
+<div class="user_head"><!--user_top begin-->
+<div class="pos_mid clearfix"> 
+
+<div class="logo">
+<div class="logo_pos">
+<h1><img src="images/logo.png" /></h1>
+</div>
+</div>
+
+<div class="head_menu">
+<a href="#">网站首页</a><a href="#">商家</a><a href="#">促销活动</a>
+</div>
+
+</div>
+</div><!--user_top end-->
+
+
+
+
+<div class="page_main clearfix"><!--page_main begin-->
+<div class="pos_mid clearfix"> 
+
+<div class="u_c_l">
+
+<div class="user_menu">
+<div class="user_face clearfix">
+<div class="face"><img src="images/face1.png" /></div>
+<div class="face_right"><p>其实不想走</p><span></span></div>
+</div>
+
+
+
+<div class="user_jj clearfix">
+<h2><p>经验</p><span>100</span></h2>
+<h2><p>积分</p><span>78</span></h2>
+</div>
+
+
+<div class="user_menu_list clearfix">
+<dl>
+<dt>我的首页</dt>
+<dd><a href="#"></a></dd>
+</dl>
+
+
+<dl>
+<dt>账号设置</dt>
+<dd><a href="#">基本信息</a></dd>
+<dd><a href="#">密码修改</a></dd>
+<dd><a href="#">安全认证</a></dd>
+<dd><a href="#">收货地址</a></dd>
+</dl>
+
+<dl>
+<dt>我的交易</dt>
+<dd><a href="#">订单列表</a></dd>
+<dd><a href="#">我的团购券</a></dd>
+<dd><a href="#">我的优惠券</a><em>2</em></dd>
+<dd><a href="#">我报名的活动</a></dd>
+<dd><a href="#">我的抽奖</a></dd>
+</dl>
+
+
+<dl>
+<dt>我的动态</dt>
+<dd><a href="#">我的消息</a><em>12</em></dd>
+<dd><a href="#">我的评论</a></dd>
+<dd><a href="#">收藏的商品</a></dd>
+<dd><a href="#">关注的商家</a></dd>
+</dl>
+
+
+
+
+</div>
+</div>
+
+</div>
+<!--u_c_l end-->
+
+<div class="u_c_m">
+
+
+
+<div class="user_main"><!--user_main begin-->
+
+<div class="user_infor clearfix"><!--user_infor begin-->
+<div class="face"><img src="images/face1.png" width="100" height="100" /><a href="#">修改头像</a></div>
+<div class="infor">
+
+<div class="user_name"><h2>其实不想走</h2><p>会员等级: 普通会员</p></div>
+
+<div class="user_rz">
+<p class="phone rz"><b></b><span>手机: 18221006642</span><em>已验证</em></p>
+<p class="mail"><b></b><span>邮箱: linyh@163.com </span><em>未验证</em></p>
+</div>
+
+<div class="user_ye"><p>您当前的帐户余额为:<font>¥14578</font></p><a href="#">立即签到</a></div>
+
+</div>
+</div><!--user_infor end-->
+
+
+
+
+
+
+
+
+<div class="user_share"><!--user_share begin-->
+<h2>发表我的分享</h2>
+<div class="textarea"><textarea name="" cols="" rows=""></textarea></div>
+<div class="share_item_btn clearfix">
+<div class="share_icon">
+<p class="img"><span></span><em>添加商品</em></p>
+<p class="bq"><span></span><em>表情</em></p>
+</div>
+
+<div class="show_icon_img" style="display:none;"><!--show_icon_img begin-->
+
+<div class="show_box">
+<div class="arrow"></div>
+
+<div class="img_link clearfix"><a href="#">确定</a><div class="img_link_input"><input name="" type="text" value="http://huaban.com/pins/324649159/" /></div></div>
+
+<div class="img_infor clearfix">
+
+<div class="img_share"><img src="images/img_none.png" /></div>
+<div class="img_right_infor"><h3>4人自选套餐,提供免费WIFI</h3><p>连接: 上上谦串串香火锅</p><span>¥110</span><a href="#">[修改照片]</a></div>
+
+</div>
+
+
+
+<div class="img_keywords clearfix">
+<div class="keywords_input"><input name="" type="text" value="填写商品关键字,用空格隔开" /></div>
+<a href="#">电影</a><a href="#">咖啡</a><a href="#">美食</a><a href="#">自助游</a><a href="#">包包</a><a href="#">复古</a>
+</div>
+
+
+
+</div>
+
+</div><!--show_icon_img end-->
+
+
+
+
+<div class="share_send">
+<div class="yzm"><img src="images/yzm_bg.png" /></div>
+<div class="yz_input"><input name="" type="text" /></div>
+<div class="send_btn"><a href="#">提交</a></div>
+</div>
+
+
+
+</div>
+
+
+</div><!--user_share end-->
+
+
+<div class="user_tab clearfix"><!--user_tab begin-->
+<div class="tab_list clearfix"><a href="#">商家动态</a><a href="#">圈子动态</a><a href="#" class="act">网友分享</a><a href="#">@提到我的</a></div>
+<div class="tab_con"><!--tab_con begin-->
+
+
+
+
+
+
+<div class="wy_share"><!--wy_share begin-->
+
+
+
+
+<div id="container"><!--container begin-->
+
+<div class="grid"><!--grid begin-->
+<div class="share_pic clearfix"><a href="#"><img src="images/demo_pic01.png"  width="218px" height="147"/></a><div class="share_price">¥110</div></div>
+<div class="share_title clearfix"><h2><a href="#">[三宝粥铺]</a></h2><p><a href="#">值得收录在家常菜谱里的美味,停不了口的蘑菇鸡肉盖浇饭</a></p></div>
+<div class="share_btns clearfix"><a href="#">喜欢 2548</a><p>销量<font>(128)</font></p></div>
+<div class="share_person clearfix"><div class="face"><a href="#"><img src="images/tjdr_pic01.png" /></a></div><a href="#">其实不想走</a><p>2天前 分享</p></div>
+</div><!--grid end-->
+
+<div class="grid"><!--grid begin-->
+<div class="share_pic clearfix"><a href="#"><img src="images/demo_pic0001.png" /></a><div class="share_price">¥1540</div></div>
+<div class="share_title clearfix"><h2><a href="#">[三宝粥铺]</a></h2><p><a href="#">值得收录在家常菜谱里的美味,停不了口的蘑菇鸡肉盖浇饭</a></p></div>
+<div class="share_btns clearfix"><a href="#">喜欢 21548</a><p>销量<font>(128)</font></p></div>
+<div class="share_person clearfix"><div class="face"><a href="#"><img src="images/face.png" /></a></div><a href="#">张丽猫猫</a><p>2天前 分享</p></div>
+</div><!--grid end-->
+
+<div class="grid"><!--grid begin-->
+<div class="share_pic clearfix"><a href="#"><img src="images/demo_pic03.png"  width="218px" height="147"/></a><div class="share_price">¥110</div></div>
+<div class="share_title clearfix"><h2><a href="#">[上上谦串串香火锅]</a></h2><p><a href="#">炒至表皮微微变黄，放入1大杯自制的米酒。继续翻炒，所有的调味料都放入一个大碗中调</a></p></div>
+<div class="share_btns clearfix"><a href="#">喜欢 28</a><p>销量<font>(128)</font></p></div>
+<div class="share_person clearfix"><div class="face"><a href="#"><img src="images/face1.png" /></a></div><a href="#">Jason</a><p>2天前 分享</p></div>
+</div><!--grid end-->
+
+
+
+
+<div class="grid"><!--grid begin-->
+<div class="share_pic clearfix"><a href="#"><img src="images/demo_pic0002.png" /></a><div class="share_price">¥110</div></div>
+<div class="share_title clearfix"><h2><a href="#">[三宝粥铺]</a></h2><p><a href="#">值得收录在家常菜谱里的美味,停不了口的蘑菇鸡肉盖浇饭</a></p></div>
+<div class="share_btns clearfix"><a href="#">喜欢 2548</a><p>销量<font>(128)</font></p></div>
+<div class="share_person clearfix"><div class="face"><a href="#"><img src="images/tjdr_pic01.png" /></a></div><a href="#">其实不想走</a><p>2天前 分享</p></div>
+</div><!--grid end-->
+
+<div class="grid"><!--grid begin-->
+<div class="share_pic clearfix"><a href="#"><img src="images/demo_pic04.png" /></a><div class="share_price">¥1540</div></div>
+<div class="share_title clearfix"><h2><a href="#">[三宝粥铺]</a></h2><p><a href="#">值得收录在家常菜谱里的美味,停不了口的蘑菇鸡肉盖浇饭</a></p></div>
+<div class="share_btns clearfix"><a href="#">喜欢 21548</a><p>销量<font>(128)</font></p></div>
+<div class="share_person clearfix"><div class="face"><a href="#"><img src="images/face.png" /></a></div><a href="#">张丽猫猫</a><p>2天前 分享</p></div>
+</div><!--grid end-->
+
+<div class="grid"><!--grid begin-->
+<div class="share_pic clearfix"><a href="#"><img src="images/demo_pic0003.png" /></a><div class="share_price">¥110</div></div>
+<div class="share_title clearfix"><h2><a href="#">[上上谦串串香火锅]</a></h2><p><a href="#">炒至表皮微微变黄，放入1大杯自制的米酒。继续翻炒，所有的调味料都放入一个大碗中调</a></p></div>
+<div class="share_btns clearfix"><a href="#">喜欢 28</a><p>销量<font>(128)</font></p></div>
+<div class="share_person clearfix"><div class="face"><a href="#"><img src="images/face1.png" /></a></div><a href="#">Jason</a><p>2天前 分享</p></div>
+</div><!--grid end-->
+
+
+
+</div><!--container end-->
+
+
+
+
+
+
+
+<div class="loading clearfix"><img src="images/loading.GIF" /><font>加载中...</font></div>
+
+
+
+
+
+
+
+
+
+
+</div><!--wy_share end-->
+
+
+
+
+
+
+
+
+</div><!--tab_con end-->
+</div><!--user_tab end-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!--user_main end-->
+
+
+
+
+
+
+
+
+
+</div>
+<!--u_c_m end-->
+
+<div class="u_c_r">
+
+
+
+<div class="pub_box2 mt0"><!--pub_box2 begin-->
+<div class="box_title clearfix"><!--box_title begin-->
+<h2>猜你喜欢</h2>
+</div><!--box_title end-->
+<div class="box_con"><!--box_con begin-->
+
+<div class="liststyle01 clearfix">
+<ul>
+
+<li>
+<div class="pic"><a href="#"><img src="images/demo_pic03.png" width="170" height="112" /></a></div>
+<h2><a href="#">西贝莜面村</a></h2>
+<span><b>¥110</b><em>已售 <font>1326</font></em></span>
+</li>
+
+
+<li>
+<div class="pic"><a href="#"><img src="images/demo_pic01.png" width="170" height="112" /></a></div>
+<h2><a href="#">自由公会音乐酒吧</a></h2>
+<span><b>¥110</b><em>已售 <font>1326</font></em></span>
+</li>
+
+
+
+</ul>
+</div>
+
+
+
+
+
+</div><!--box_con end-->
+</div><!--pub_box2 begin-->
+
+
+<div class="pub_box2"><!--pub_box2 begin-->
+<div class="box_title clearfix"><!--box_title begin-->
+<h2>最近浏览</h2>
+<div class="links"><a href="#">[清空]</a></div>
+</div><!--box_title end-->
+<div class="box_con"><!--box_con begin-->
+
+<div class="liststyle01 clearfix">
+<ul>
+
+
+
+<li>
+<div class="pic"><a href="#"><img src="images/demo_pic01.png" width="170" height="112" /></a></div>
+<h2><a href="#">自由公会音乐酒吧</a></h2>
+<span><b>¥110</b><em>已售 <font>1326</font></em></span>
+</li>
+
+
+<li>
+<div class="pic"><a href="#"><img src="images/demo_pic02.png" width="170" height="112" /></a></div>
+<h2><a href="#">三宝粥铺</a></h2>
+<span><b>¥110</b><em>已售 <font>1326</font></em></span>
+</li>
+
+
+</ul>
+</div>
+
+
+
+
+
+</div><!--box_con end-->
+</div><!--pub_box2 begin-->
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!--u_c_r end-->
+
+
+</div>
+</div><!--page_footer begin-->
+
+
+
+
+
+
+
+
+
+<div class="page_footer clearfix"><!--page_footer begin-->
+
+<div class="infor clearfix"><!--infor begin-->
+
+<div class="pos_mid">
+
+<div class="about"><!--about begin-->
+<dl>
+<dt>获取更新</dt>
+<dd><a href="#">邮件订阅</a></dd>
+<dd><a href="#">iPhone/Android</a></dd>
+<dd><a href="#">美团QQ空间</a></dd>
+<dd><a href="#">美团新浪微博</a></dd>
+<dd><a href="#">sitemap</a></dd>
+<dd><a href="#">RSS订阅</a></dd>
+</dl>
+
+<dl>
+<dt>商务合作</dt>
+<dd><a href="#">提供团购信息</a></dd>
+<dd><a href="#">美团商家营销平台</a></dd>
+<dd><a href="#">市场合作</a></dd>
+<dd><a href="#">美团联盟</a></dd>
+<dd><a href="#">廉正邮箱</a></dd>
+
+</dl>
+
+
+<dl>
+<dt>公司信息</dt>
+<dd><a href="#">关于美团</a></dd>
+<dd><a href="#">美团承诺</a></dd>
+<dd><a href="#">媒体报道</a></dd>
+<dd><a href="#">加入我们</a></dd>
+<dd><a href="#">法律声明</a></dd>
+<dd><a href="#">用户协议</a></dd>
+</dl>
+
+<dl>
+<dt>用户帮助</dt>
+<dd><a href="#">申请退款</a></dd>
+<dd><a href="#">查看美团券密码</a></dd>
+<dd><a href="#">常见问题</a></dd>
+<dd><a href="#">开放API</a></dd>
+<dd><a href="#">美团云</a></dd>
+<dd><a href="#">反诈骗公告</a></dd>
+</dl>
+
+
+
+<div class="tel"><!--tel begin-->
+
+<div class="tel_con">
+
+<div class="tel_icon"></div>
+<h2>全国统一客服电话</h2>
+<p>4008-123-123</p>
+<div class="qq">QQ群: 494623520</div>
+
+</div>
+
+
+</div><!--tel end-->
+
+
+
+
+</div><!--about end-->
+
+
+
+</div>
+</div><!--infor end-->
+
+
+
+
+
+
+<div class="copy"><!--copy begin-->
+©2014美团网团购 meituan.com 京ICP证070791号 
+</div><!--copy end-->
+
+
+
+</div><!--page_footer end-->
+
+
+</body>
+</html>

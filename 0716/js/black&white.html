@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>黑白间隔表</title>
+</head>
+<body>
+    <table width=400 height=400 border=1 cellspacing=0>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </table>
+</body>
+</html>
+
+
+<script>
+    var td=document.getElementsByTagName("td");
+    var tr=document.getElementsByTagName("tr");
+    var col=td.length/tr.length;
+    for(var c=1,len=td.length;c<len;c++){
+        if(td[c-1].style.background==''){
+            td[c].style.background='black';
+        }else{td[c].style.background='';}
+        if(c-col>=0){
+        if(td[c-col].style.background==''){
+            td[c].style.background='black';
+        }else{td[c].style.background='';}}
+    }
+</script>

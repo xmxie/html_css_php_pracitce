@@ -11,9 +11,9 @@
     <div id='content'>
         <div id='head'>
             <img id='head_img' src="./images/top_r1_c1.jpg" alt="">
-            <p>游客你好！您还没有<a href="www">登录</a>，若您不是会员请先免费<a href="www">注册</a></p>
+            <p>游客你好！您还没有<a href="login.html">登录</a>，若您不是会员请先免费<a href="register.html">注册</a></p>
             <ul id='head_ioc'>
-                <li id='ioc_1'><a href="">留言板</a></li>
+                <li id='ioc_1'><a href="message.html">留言板</a></li>
                 <li id='ioc_2'><a href="">订阅</a></li>
                 <li id='ioc_3'><a href="">加入收藏</a></li>
                 <li id='ioc_4'><a href="">论坛</a></li>
@@ -26,50 +26,157 @@
                 <li><a href="">业务合作</a></li>
                 <li><a href="">历届年会</a></li>
                 <li><a href="">会员之家</a></li>
+                <input type="text" class=nav_input id=search>
             </ul>
         </div>
-        <div id='banner'>
-            <img src="./images/header_r1_c1.jpg" alt="">
-        </div>
-        <div id='loginbar'>
+        <div id=allbanner>
+            <div class='banner'>
+                <div class='banner_pic' id=banner style='left:0px;'>
+                    <img src="./images/header_r1_c1.jpg" alt="" title='1'>
+                    <img src="./images/about_banner.jpg" alt="" title='2'>
+                    <img src="./images/header_r1_c1.jpg" alt="" title='3'>
+                    <img src="./images/about_banner.jpg" alt="" title='4'>
+                </div>
+                <button class=buttonLeft  onmouseover="bright(event)" onmouseout="dark(event)" id=left>&#8678;</button>
+                <button class=buttonRight onmouseover="bright(event)" onmouseout="dark(event)" onclick="turnright()" id=right>&#8680;</button>
+                <ul class='thum' id=thum>
+                    <li id=0 onmouseover="thumclick(event)">1</li>
+                    <li id=1 onmouseover="thumclick(event)">2</li>
+                    <li id=2 onmouseover="thumclick(event)">3</li>
+                    <li id=3 onmouseover="thumclick(event)">4</li>
+                </ul>
+            </div>
+        <div id='sidebar' style="margin-top:4px;">
             <ul>
-                <li id=loginbar_1></li>
-                <li id=loginbar_2><p>样本分会入会申请<br>
-                    <font class=gray>Application for Membership</font></p><br></li>
-                <li id=loginbar_2><p>样本分会入会申请<br>
-                    <font class=gray>Application for Membership</font></p><br></li>
-                <li id=loginbar_2><p>样本分会入会申请<br>
-                    <font class=gray>Application for Membership</font></p><br></li>
+                <li id=sidebar_1><a href=""></a></li>
+                <li id=sidebar_2><a href=""><p>样本分会入会申请<br>
+                    <font class=gray>Application</font></p><br></a></li>
+                <li id=sidebar_2><a href=""><p>样本分会入会申请<br>
+                    <font class=gray>Application</font></p><br></a></li>
+                <li id=sidebar_2><a href=""><p>样本分会入会申请<br>
+                    <font class=gray>Application</font></p><br></a></li>
             </ul>
         </div>
-        <div id='newsLeft'>
-            <div class=newsLeft_title>关于分会</div>
-            <dl class=newsLeft_content>
-                <dt><img src="./images/about_fh_pic.jpg" alt=""></dt>
-                <dd>中国医药技术协会成立于1993年，由国家卫生部部长陈敏等发起，
-                        得到了当时医药管理部门的大力支持</dd>
-            </dl>
         </div>
-        <div id='newsMid'>
-            <div class='newsMid_title'></div>
+        <div id='newsLeft' style="margin-right: 8px">
+            <div class=newsLeft_title>关于分会 <a href="" class=news_more></a></div>
+            <a href=""><div class=newsLeft_content>
+                <img src="./images/about_fh_pic.jpg">
+                <p>中国医药技术协会成立于1993年，由国家卫生部部长陈敏等发起，得到了当时医药管理部门的大力的支持</p></a></div>
+        </div>
+        <div class='newsMid'>
+            <div class='newsMid_title'>
+                <div class='title_box'>行业动态 </div>
+            </div>
             <ul class=newsMid_content>
-                <li><img src="./images/message_arrow_r1_c3.gif" alt="">某莫某教授赴华中科技大学同济医学院...</li>
-                <li><img src="./images/message_arrow_r1_c3.gif" alt="">某莫某教授赴华中科技大学同济医学院...</li>
-                <li><img src="./images/message_arrow_r1_c3.gif" alt="">某莫某教授赴华中科技大学同济医学院...</li>
-                <li><img src="./images/message_arrow_r1_c3.gif" alt="">某莫某教授赴华中科技大学同济医学院...</li>
-                <li><img src="./images/message_arrow_r1_c3.gif" alt="">某莫某教授赴华中科技大学同济医学院...</li>
-                <li><img src="./images/message_arrow_r1_c3.gif" alt="">某莫某教授赴华中科技大学同济医学院...</li>
+                <a href=''><li>某莫某教授赴华中科技大学同济医学院...</a></li>
+                <a href=''><li>某莫某教授赴华中科技大学同济医学院...</a></li>
+                <a href=''><li>某莫某教授赴华中科技大学同济医学院...</a></li>
+                <a href=''><li>某莫某教授赴华中科技大学同济医学院...</a></li>
+                <a href=''><li>某莫某教授赴华中科技大学同济医学院...</a></li>
+                <a href=''><li>某莫某教授赴华中科技大学同济医学院...</a></li>
             </ul>
-            <dl class=newsMid_content2>
-                <dt><img src="./images/hydt_pic_r1_c1.jpg" alt=""></dt>
-                <dl><h5>分会赴湖北省肿瘤</h5>周主任从生物样本库的建设原则总体设计</dl>
-            </dl>
-            <dl class=newsMid_content2>
-                    <dt><img src="./images/hydt_pic_r1_c1.jpg" alt=""></dt>
-                    <dl><h5>分会赴湖北省肿瘤</h5>周主任从生物样本库的建设原则总体设计</dl>
-                </dl>
+            <a href="">
+            <dl class=newsMid_content2 style="margin-top:20px;" >
+                <dt><img src="./images/hydt_pic_r1_c1.jpg"></dt>
+                <dd><h3>分会赴湖北省肿瘤</h3>周主任从生物样本库的建设原则总体设计</dd>
+            </dl></a>
+            <a href="">
+                <dl class=newsMid_content2 >
+                    <dt><img src="./images/hydt_pic_r1_c1.jpg"></dt>
+                    <dd><h3>分会赴湖北省肿瘤</h3>周主任从生物样本库的建设原则总体设计</dd>
+                </dl></a>
         </div>
-        <div id='newsRight'></div>
+        <div id='newsRight'>
+            <div class="newsRight_title">分会新闻<a href="" class=news_more></a></div>
+            <div class="newRight_content">
+                <a href=""><img src="./images/news_fh.jpg" alt="">
+                <h3>某某某教授赴华中科技大学</h3>
+                中国医药技术协会成立于1993年，由国家卫生部部长陈敏等发起，
+                        得到了当时医药管理部门的大力支持</a>
+            </div>
+        </div>
+        <div id='sidebar2' style="margin-top:10px;">
+            <ul>
+               <li id=sidebar_3> <a href=""><p>样本分会入会申请<br>
+                    <font class=gray>Application</font></p><br></a></li>
+               <li id=sidebar_3> <a href=""><p>样本分会入会申请<br>
+                    <font class=gray>Application</font></p><br></a></li>
+               <li id=sidebar_3> <a href=""><p>样本分会入会申请<br>
+                    <font class=gray>Application</font></p><br></a></li>
+               <li id=sidebar_3> <a href=""><p>样本分会入会申请<br>
+                    <font class=gray>Application</font></p><br></a></li>
+            </ul>
+        </div>
+        <div class='newsMid'>
+            <div class=newsMid_title>  <div class='title_box'>业务交流 </div></div>
+            <ul class=column_iamges>
+                <li style="margin-left: 14px;"><img src="./images/ywhz_pic_r1_c1.jpg" class='column_img'></li>
+                <li><img src="./images/ywhz_pic_r1_c12.jpg" class='column_img'></li>
+                <li><img src="./images/ywhz_pic_r1_c15.jpg" class='column_img'></li>
+                <li><img src="./images/ywhz_pic_r1_c19.jpg" class='column_img'></li>
+                <li><img src="./images/ywhz_pic_r1_c23.jpg" class='column_img'></li>
+            </ul>
+            <div class='column_news'>
+                <a href=""><h4>分会赴湖北省</h4><p>周主任从生物样本库的建立原则总设计、功能区域周主任从生物样本库的建立原则总设计周主任从生物样本库的建立原则总设计</p></a>
+            </div>
+        </div>
+        <div id='newsRight'>
+            <div class="newsRight_title">学术交流<a href="" class=news_more></a></div>
+            <div class=newsRightMid> 
+                <img src="./images/pic1.jpg" alt="">
+                <h5>行业动态标题</h5><p>这里是一段测试文本 尚有待调整<a href="">详情>></a></p>
+            </div>
+            <ul class=newsLeftBottom style="margin-top:-8px;">
+                    <li><a href="">某莫某教授赴华中科</a></li>
+                    <li><a href="">某莫某教授赴华中科</a></li>
+                    <li><a href="">某莫某教授赴华中科</a></li>
+                    <li><a href="">某莫某教授赴华中科</a></li>
+            </ul>
+        </div>
+        <div id='newsLeft' style="height: 200px;">
+                <div class=newsLeft_title>会员之家<a href="" class=news_more></a></div>
+                <ul class=newsLeftBottom>
+                        <li><a href="">某莫某教授赴华中科</a></li>
+                        <li><a href="">某莫某教授赴华中科</a></li>
+                        <li><a href="">某莫某教授赴华中科</a></li>
+                        <li><a href="">某莫某教授赴华中科</a></li>
+                        <li><a href="">某莫某教授赴华中科</a></li>
+                        <li><a href="">某莫某教授赴华中科</a></li>
+                    </ul>
+            </div>
+        <img src="./images/bottom_ad_pic.jpg" class=newsMid style="height: 187px;margin-top:18px; margin-left:7px;margin-right: 8px;">
+        <div id='newsRight' style="height:200px;">
+                <div class="newsRight_title">资源中心<a href="" class=news_more></a></div>
+                <ul class="newRight_content" style="height:150px;">
+                    <li><a href=""><img src="./images/zy_icon_s_r5_c1.jpg">&nbsp;&nbsp;&nbsp;这是一个新闻</a></li>
+                    <li><a href=""><img src="./images/zy_icon_s_r7_c1.jpg">&nbsp;&nbsp;&nbsp;这是一个新闻</a></li>
+                    <li><a href=""><img src="./images/zy_icon_s_r1_c1.jpg">&nbsp;&nbsp;&nbsp;这是一个新闻</a></li>
+                    <li><a href=""><img src="./images/zy_icon_s_r7_c1.jpg">&nbsp;&nbsp;&nbsp;这是一个新闻</a></li>
+                    <li><a href=""><img src="./images/zy_icon_s_r1_c1.jpg">&nbsp;&nbsp;&nbsp;这是一个新闻</a></li>
+                </ul>
+        </div>
+        <div id="friend">
+            <img src="./images/friends_r1_c1.jpg" alt="">
+            <img src="./images/friends_r1_c4.jpg" alt="">
+            <img src="./images/friends_r1_c6.jpg" alt="">
+            <img src="./images/friends_r1_c8.jpg" alt="">
+            <img src="./images/friends_r1_c11.jpg" alt="">
+        </div>
+        <div id='bottom'>
+            <img src="./images/footer_logo.jpg" alt="">
+            <p>地址：上海市冰河路151号（201203）&nbsp;&nbsp;电话：86--51320288-5427/5415&nbsp;&nbsp;传真：2654-56456-41563</p>
+        </div>
+        <div class='inform' id=inform>
+            <div class='inform_title' style="left:12px">通知</div>
+            <a href="javascript::"><div class='inform_title' style="right:0px" id='close'>关闭</div></a>
+            <div class='inform_content'>
+                <h4>通知标题</h4>
+                <font>2012年12月24日</font>
+                <p>这里有一段文本和一段文本这里有一段文本和一段文本这里有一段文本和一段文本这里有一段文本和一段文本</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
+<script  src='pro.js'></script>

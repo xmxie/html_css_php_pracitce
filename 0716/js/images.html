@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>picChange</title>
+    <style>
+        *{margin:0;padding:0;}
+        .main{width:2520px;height: 500px;position: relative;left:0px;white-space: nowrap;list-style: none;transition: all 1s;}
+        .main li{width:500px;height: 500px;position: relative; z-index: 0;float:left;}
+        /* .main img{position:relative;z-index: 0;} */
+        .main li p{width:200px;height:40px;position: absolute;left:20px;bottom:0px;color:#eaeaea;z-index: 1;}
+        .box{width:500px;height: 500px;border:1px solid black;overflow: hidden; position:relative;left:35%;top:40px;}
+        .main img{width:500px;height:500px;float:left;}
+        .buttonLeft,.buttonRight{position: absolute;left:20px;top:200px;font-size:50px;background:rgba(255,255,255,0);border-radius: 50px;
+        transform-origin: center center;text-align: center;width:0px;height: 0px;line-height:70px;border:0px;}
+        .buttonRight{left:420px;}
+        .thum{width:500px;height:100px; position:relative;left:35%;top:40px;list-style: none;}
+        .thum img{width:80px;height: 80px;margin: 10px; float:left;z-index: 1 }
+        .border{width:80px;height: 80px;margin:10px;position: absolute; box-shadow: 0px 0px 10px 10px red }
+    </style>
+</head>
+<body>
+
+    <div class='box'>
+        <ul class='main' id=img style="left:0px;">
+            <li><img src="./images/1.jpg" alt=""><p>来自p站画师的作品1</p></li>
+            <li><img src="./images/2.jpg" alt=""><p>来自p站画师的作品2</p></li>
+            <li><img src="./images/3.jpg" alt=""><p>来自p站画师的作品3</p></li>
+            <li><img src="./images/4.jpg" alt=""><p>来自p站画师的作品4</p></li>
+            <li><img src="./images/5.jpg" alt=""><p>来自p站画师的作品5</p></li>
+        </ul>
+        <ul>
+
+        </ul>
+        <button class=buttonLeft  onmouseover="bright(event)" onmouseout="dark(event)" id=left>&#8678;</button>
+        <button class=buttonRight onmouseover="bright(event)" onmouseout="dark(event)" onclick="turnright()" id=right>&#8680;</button>JS版本
+        <!-- <style> .buttonRight:hover,.buttonLeft:hover{background: rgba(255,255,255,0.9);transition: all .5s;}</style>
+        <button class=buttonLeft onclick="turnLeft()">←</button>
+        <button class=buttonRight onclick="turnRight()">→</button>              hover版本(没有恢复效果) -->
+    </div>
+    <ul class=thum>
+        <div class=border id=border style="left:0px;"></div>
+        <li><img src="./images/1.jpg" id="0" onmouseover="thumclick(event)"></li>
+        <li><img src="./images/2.jpg" id="1" onmouseover="thumclick(event)"></li>
+        <li><img src="./images/3.jpg" id="2" onmouseover="thumclick(event)"></li>
+        <li><img src="./images/4.jpg" id="3" onmouseover="thumclick(event)"></li>
+        <li><img src="./images/5.jpg" id="4" onmouseover="thumclick(event)"></li>
+    </ul>
+</body>
+
+
+
+
+<script>
+    var left=document.getElementById("left");
+    var right=document.getElementById("right");
+    var oborder=document.getElementById("border")
+    var oimg=document.getElementById("img");
+    var infinte=null;
+    var infinte=setInterval("turnright()",5000)
+
+    function turnright(){
+    // function turnRight(){
+        // var oimg=document.getElementById("img");
+        clearInterval(infinte);
+        infinte=setInterval("turnright()",5000)
+        if(oimg.style.left=='-2000px'){
+            oimg.style.left='0px';
+            oborder.style.left='0px';
+            }else{
+                 oimg.style.left=parseInt(oimg.style.left)-500+'px';
+                 oborder.style.left=parseInt(oborder.style.left)+100+'px';
+                 }
+    }
+    left.onclick=function(){
+    // function turnLeft(){
+        // var oimg=document.getElementById("img");
+        clearInterval(infinte);
+        infinte=setInterval("turnright()",5000)
+        if( oimg.style.left=='0px'){
+            oimg.style.left='-2000px';
+            oborder.style.left='400px';
+            }else{
+                 oimg.style.left=parseInt(oimg.style.left)+500+'px';
+                 oborder.style.left=parseInt(oborder.style.left)-100+'px';
+                 }
+    }
+    function bright(event){
+        // alert();
+        button=event.target;
+        // var button=document.getElementById(x.id);
+        button.style.background="rgba(255,255,255,0.9)";
+        button.style.transition="all .5s";
+        button.style.width="70px";
+        button.style.height="70px";
+    }
+    function dark(event){
+        button=event.target;
+        button.style.background="rgba(255,255,255,0)";
+        button.style.transition="all .5s";
+        button.style.width="0px";
+        button.style.height="0px";
+    }
+
+    function thumclick(event){
+        oimg.style.left=parseInt(event.target.id)*(-500)+'px';
+        oborder.style.left=parseInt(event.target.id)*(100)+'px';
+    }
+    oimg.onmouseover=function(){clearInterval(infinte)}
+    oimg.onmouseout=function(){infinte=setInterval("turnright()",5000)}
+</script>
+</html>

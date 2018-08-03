@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>移动小方块</title>
+    <style>
+    .box{width:200px;height: 200px;background: red;position: absolute;}
+    </style>
+</head>
+<body>
+    <div class=box id=box></div>
+</body>
+</html>
+
+<script>
+var box=document.getElementById("box");
+box.onmousedown=function(){
+        // box.style.background='blue';
+        box.style.border='1px dashed black';
+        if(document.onmousemove==null){
+        document.onmousemove=function(e){
+            box.style.left=e.clientX-100+'px';
+            box.style.top=e.clientY-100+'px';
+        }}else{document.onmousemove=null;
+                box.style.border='none'    
+        }
+    }
+// box.onmouseup=function(e){
+//     box.style.background='red';
+//     box.style.border='none';
+//     document.onmousemove=null;
+// }
+</script>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta names="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EventPra</title>
+    <style>
+        body{background: #f6f6f6;}
+        .box{float:right;min-width:200px;min-height: 150px;color:red;display:none;border:1px solid black;}
+        .list{width:800px;min-height: 100px;border-bottom: 1px dashed gray;}
+    </style>
+</head>
+<body>
+
+
+
+    <!-- 1stpra -->
+   <!--  <div class=list>
+    <button onclick="alert('弹出窗口')">弹窗</button>
+    </div>
+    <div class=list>
+    <p onmouseover="document.getElementById('btn').style.display='block';" onmouseout="document.getElementById('btn').style.display='none'" >鼠标经过文本出现按钮</p>
+    <button style="display:none" id=btn>按钮</button>
+    </div>
+    <div class=list>
+    <div style="width:800px;height:20px;" onmouseover="style.height='200px';style.background='red';style.opacity='0.7';style.transition='all 0.5s';" 
+    onmouseout="style.height='20px';style.background='none';style.background='rgba(255,0,0,0)';style.opacity='1';style.transition='all 0.5s';">3、函数 鼠标经过这个div执行变窄变高变色 移出再恢复</div>
+    </div> -->
+    <!-- 这里开始使用函数执行操作 -->
+    <!-- <div class=list>
+    <div  onmouseover="opbox()" onmouseout="cobox()"> <input type="checkbox" >4、 鼠标经过就弹出层<br></div>
+    <div class=box id=box1>这是弹窗</div>
+    </div>
+    <div class=list>
+    <a onclick="clbox()" href="javascript:;">5、鼠标点击就弹出层</a>
+    <div class=box id=box2>这也是弹窗<//div>
+    </div>
+    <div class=list>
+    <p>网页换肤（可复原！！！）</p>
+    <button onclick="red()">红色</button><button onclick="yellow()">黄色</button>
+    </div>
+    <div class=list>
+    <p>7、显示隐藏</p>
+    <button onclick="showhide()">显示</button><button id=hide style='display:none'>隐藏</button>
+    </div> -->
+    
+
+
+    <input type="text" id=usr  value="请输入用户名" style="color:gray;outline: unset;" onfocus="input()">
+    <input type="button" id=hand value=提交>
+    <p id='result'>提交后在这里显示：</p>
+
+
+
+
+</body>
+</html>
+
+<script>
+
+    // www.mhero.com
+
+
+
+    // 2rd pra
+    var askinput='请输入用户名';
+    var names=document.getElementById('usr');
+    names.onfocus =function(){
+        // function input(){
+        // var names=document.getElementById("usr");
+        names.style.outline="2px solid skyblue";
+        names.style.boxShadow="0px 1px 10px  skyblue";
+        names.style.color="balck";
+        if(names.value==askinput)
+         {names.value='';}
+    }
+    names.onblur=function(){
+        names.style.outline="unset";
+        names.style.color="gray";
+        names.style.boxShadow="unset";
+        if(names.value=="")
+         {names.value=askinput;}
+    }
+    
+    var button=document.getElementById("hand")
+    var result=document.getElementById("result");
+    var alignresult='提交后在这里显示：';
+    button.onclick=function(){
+        // alert();
+        if(names.value!=askinput){
+        result.innerText=alignresult+names.value;}
+    }
+
+
+    // 1st pra
+    function opbox(){
+        document.getElementById("box1").style.display="block";}
+    function cobox(){
+        document.getElementById("box1").style.display="none";}
+
+    function clbox(){
+        var box=document.getElementById("box2");
+        if(box.style.display=='block'){
+            box.style.display='none';
+            }else{
+            box.style.display='block'
+            }
+    }
+    function red(){
+        if(document.body.style.background!='red'){
+            document.body.style.background='red'
+            }else{
+                document.body.style.background='#f6f6f6'}
+    }
+    function yellow(){
+        if(document.body.style.background!='yellow'){
+            document.body.style.background='yellow'
+            }else{document.body.style.background='#f6f6f6'}
+    }
+    function showhide(){
+        var box=document.getElementById("hide");
+        if(box.style.display=='block'){
+            box.style.display='none'
+            }else{box.style.display='block'}
+    }
+
+
+
+    
+        </script>

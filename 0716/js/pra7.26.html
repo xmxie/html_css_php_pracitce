@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>emmmmm</title>
+    <style>
+        *{margin:0;padding: 0;}
+        .main{width: 300px;height: 320px;border:1px solid black;margin:0 auto;}
+        .box{width:300px;height: 100px;background-color: aqua;border-bottom:1px solid black;}
+        .calendar{width:400px;height: 550px;background: #eaeaea;list-style: none;margin:0 auto;padding-top:20px;}
+        .calendar li{height:100px;width:100px; background: black;display:inline-block;color:white;margin-top:10px;}
+        .calendar li:nth-child(3n+1){margin-left: 40px;}.calendar li:first-child{background: white;color:black;}
+        .calendar p{width:300px;height: 80px;display: block;margin:20px 40px;display: none;background: white;}
+        
+    </style>
+</head>
+<body>
+    <button>测试按钮1</button><button>测试按钮2</button><button>测试按钮3</button><button>测试按钮4</button>
+    <div class=main>
+        <input type="button" value="first">
+        <input type="button" value="second">
+        <input type="button" value="third">
+        <div class=box style="display:block">第一个</div>
+        <div class=box style="display:none;">第二个</div>
+        <div class=box style="display:none;">第三个</div>
+    </div>
+
+    <div class=calendar>
+        <ul>
+            <li>Jan</li>
+            <li>Feb</li>
+            <li>Mar</li>
+            <li>Aprl</li>
+            <li>May</li>
+            <li>June</li>
+            <li>July</li>
+            <li>Aug</li>
+            <li>Sept</li>
+            <li>Oct</li>
+            <li>Nov</li>
+            <li>Dec</li>
+        </ul>
+        <p style="display: block">一月份活动</p>
+        <p>二月份活动</p>
+        <p>三月份活动</p>
+        <p>四月份活动</p>
+        <p>五月份活动</p>
+        <p>六月份活动</p>
+        <p>七月份活动</p>
+        <p>八月份活动</p>
+        <p>九月份活动</p>
+        <p>十月份活动</p>
+        <p>十一月份活动</p>
+        <p>十二月份活动</p>
+
+    </div>
+    <table width=400px height=200px border=1px cellspacing=0 cellpadding=10 style="margin:auto"  id=table >
+        <tr>
+            <td colspan="3">
+                搜索姓名<input type="text" id=input>
+                <input type="button" value="确认" id=sure>
+            </td>
+        </tr>
+        <tr>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>年龄</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>张四</td>
+            <td>32</td>
+        </tr>
+        <tr> 
+            <td>3</td>
+            <td>赵五</td>
+            <td>45</td>
+        </tr>
+        <tr> 
+            <td>4</td>
+            <td>王狗蛋</td>
+            <td>28</td>
+        </tr>
+        <button id=moveColor>开启移入变色</button>
+
+    </table>
+
+    <table width=500px height=400px border=1px cellspacing=0 cellpadding=10 style="margin:auto"  id=chess >
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        </table>
+
+</body>
+
+
+<script src='pra7.26.js'></script>
+<script>
+    var chess=document.getElementById("chess");
+    var ctd=chess.getElementsByTagName("td");
+    var det=0;
+    for(var count=0;count<ctd.length;count++){
+        ctd[count].index=count;
+        
+        ctd[count].onclick=function(){
+            if(det==0){
+            ctd[this.index].style.background='black';det=1
+            }else{ctd[this.index].style.background='red';det=0}
+        }
+    }
+    // 搜索之补充
+    var moveColor=document.getElementById("moveColor");
+    var on=true;
+    moveColor.onclick=function(){
+        if(on){
+        for(var t=2;t<tr.length;t++){
+            tr[t].num=t;
+            tr[t].onmousemove=function(){
+                tr[this.num].style.background='red';
+            }
+            tr[t].onmouseout=function(){
+                tr[this.num].style.background='none';
+            }
+        }
+        on=false;
+        this.innerText='关闭移入变色';
+        }else{ for(var t=2;t<tr.length;t++){
+            tr[t].num=t;
+            tr[t].onmousemove=null;
+            tr[t].onmouseout=null;
+        }
+        on=true;
+        this.innerText='开启移入变色'}
+    }
+</script>
+
+</html>

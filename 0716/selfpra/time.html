@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定时器</title>
+    <style>
+    *{margin:0;padding: 0;}
+    .bg{width:500px;height:400px;border:1px solid red;margin:0 auto;}
+    .box{width:50px;height: 50px;background: red;position:relative}
+    </style>
+</head>
+<body>
+    <input type="button" value="appear" onclick="test()">
+    <input type="button" value="cancel" onclick="cancel()"> 
+    <input type="button" value="显示定时的警告框" onClick = "timedMsg()">
+    <div class=bg>
+    <div class=box style='left:0px;top:0px;' onclick="shit()"></div>
+    </div>
+</body>
+
+    <script>
+
+        var button=document.getElementsByTagName("input");
+        function cancel(){clearTimeout(t);}
+
+        function test(){var t=setTimeout("alert('嘤嘤嘤')",2000)}
+
+        var odiv=document.getElementsByTagName('div');
+        var timing=null;var xSpeed=1;ySpeed=3;var time=15;
+        timing=setInterval("move()",time);
+        odiv[1].onmouseover=function(){clearInterval(timing)}
+        odiv[1].onmouseout=function(){timing=setInterval("move()",time);}
+        function move(){
+            odiv[1].style.left=parseInt(odiv[1].style.left)+xSpeed+'px';
+            odiv[1].style.top=parseInt(odiv[1].style.top)+ySpeed+'px';
+            if(parseInt(odiv[1].style.left)>=450||parseInt(odiv[1].style.left)<=0){ xSpeed=-xSpeed;}
+            if(parseInt(odiv[1].style.top)>=350||parseInt(odiv[1].style.top)<=0){ySpeed=-ySpeed;}
+        }   
+       
+
+    </script>
+
+
+</html>
+

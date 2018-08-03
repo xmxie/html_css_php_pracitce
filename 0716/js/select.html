@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择</title>
+</head>
+<body>
+    <span id=pra1>
+        <button id=cAll>全选</button>
+        <button id=cCon>反选</button>
+        <button id=cNo>取消选择</button>
+        <br>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+    </span>
+    <br>
+    <span id=pra2>
+        <select name="pro" id="" >
+            <option value="0">请选择</option>
+            <option value="1">广东</option>
+            <option value="2">广西</option>
+            <option value="3">山东</option>
+            <option value="4">湖南</option>
+        </select>
+        <select name="city" id="">
+            <option value="none">请选择</option>
+        </select>
+         <select name="ground" id="">
+            <option value="none">请选择</option>
+        </select>
+    </span>
+    <br>
+</body>
+</html>
+<script>
+
+    // 全选/反选/取消
+    var pra=document.getElementsByTagName('span')
+    var button=pra[0].getElementsByTagName('button');
+    var option=pra[0].getElementsByTagName('input');
+    button[0].onclick=function(){
+        for(var i=0;i<option.length;i++){
+            option[i].checked=true;
+        }
+    }
+    button[1].onclick=function(){
+        for(var i=0;i<option.length;i++){
+            if(option[i].checked){
+                option[i].checked=false
+                }else{option[i].checked=true}
+        }    
+    }
+    button[2].onclick=function(){
+        for(var i=0;i<option.length;i++){
+            option[i].checked=false;
+        }
+    }
+
+
+
+    // 二级列表
+    var oselect=pra[1].getElementsByTagName("select");
+    var arr0=[
+                [],
+                ['深圳', '广州','东莞','惠州'],
+                ['桂林', '桂林','桂林','桂林'],
+                ['青岛', '济南','青岛','济南'],
+                ['长沙', '长沙','长沙','长沙'],
+        ]
+    var arr10=[
+                [],
+                ['深圳区','深圳区','深圳区','深圳区'],
+                ['广州区','广州区','广州区','广州区'],
+                ['东莞区','东莞区','东莞区','东莞区'],
+                ['惠州区','惠州区','惠州区','惠州区']
+    ]
+    var arr=[
+        [arr0],[arr10]
+    ];
+
+    console.log(arr[0][0]);
+    function demo(obj){
+         var select1=obj.getElementsByTagName("option");
+            select1.tmp= obj.selectedIndex;
+        var x=0;
+        while(oselect[x]!=obj){x++}
+        for(var t=x+1;t<oselect.length;t++){
+        while(oselect[t].childNodes.length>3){
+            oselect[t].removeChild(oselect[t].lastChild);
+        }}
+        var lastChoose=0;
+        if(x>0){
+            lastChoose=oselect[x-1].selectedIndex-1;
+        }
+        for(var y=0;y<arr[x][lastChoose][select1.tmp].length;y++){
+            var city=arr[x][lastChoose][select1.tmp][y];
+            var tmp=document.createElement('option');
+            tmp.setAttribute('value',y);
+            tmp.innerHTML=city;
+            oselect[x+1].appendChild(tmp);
+        }
+    }
+    for(var c=0;c<oselect.length-1;c++){
+    oselect[c].onchange=function(){
+        demo(this)
+    }}
+    // oselect[1].onchange=function(){
+    //     var select1=oselect[1].getElementsByTagName("option");
+    //         select1.tmp= oselect[1].selectedIndex;
+    //     while(oselect[2].childNodes.length>3){
+    //         oselect[2].removeChild(oselect[2].lastChild);
+    //     }
+    //     for(var y=0;y<arr1[select1.tmp].length;y++){
+    //         var city=arr1[select1.tmp][y];
+    //         var tmp=document.createElement('option');
+    //         tmp.setAttribute('value',y);
+    //         tmp.innerHTML=city;
+    //         oselect[2].appendChild(tmp);
+    //     }
+    // }
+
+</script>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EventPra</title>
+    <style>
+    .box{
+        width:500px;
+        height: 500px;
+        padding: 50px;
+        border:1px solid black;
+        float:left;
+    }
+    .cap{width:450px;height: 450px;}
+    .ninebox{
+        width:150px;height: 150px;border:1px solid black;box-sizing: border-box; float:left;
+    }
+    </style>
+</head>
+<body>
+    <!-- <div class=box id=box1 onclick="change1()"><img src="../html/images/angle.jpg" alt=""></div>
+    <div class=box id=box2 onclick="change2()"></div> --><!-- 图片换序 -->
+
+        超长烦死人版本九函数九宫格
+    <div class=cap>
+        <div class=ninebox id=box1 onclick="ninebox1()">2</div>
+        <div class=ninebox id=box2 onclick="ninebox2()">6</div>
+        <div class=ninebox id=box3 onclick="ninebox3()">5</div>
+        <div class=ninebox id=box4 onclick="ninebox4()">4</div>
+        <div class=ninebox id=box5 onclick="ninebox5()"></div>
+        <div class=ninebox id=box6 onclick="ninebox6()">8</div>
+        <div class=ninebox id=box7 onclick="ninebox7()">3</div>
+        <div class=ninebox id=box8 onclick="ninebox8()">1</div>
+        <div class=ninebox id=box9 onclick="ninebox9()">7</div>
+    </div>
+        缩略很舒服版九行码九宫格（好吧一样的）
+    <div class=cap id=second>
+        <div class=ninebox id=1 onclick="game(event)">2</div>
+        <div class=ninebox id=2 onclick="game(event)">6</div>
+        <div class=ninebox id=3 onclick="game(event)">5</div>
+        <div class=ninebox id=4 onclick="game(event)">4</div>
+        <div class=ninebox id=5 onclick="game(event)"></div>
+        <div class=ninebox id=6 onclick="game(event)">8</div>
+        <div class=ninebox id=7 onclick="game(event)">3</div>
+        <div class=ninebox id=8 onclick="game(event)">1</div>
+        <div class=ninebox id=9 onclick="game(event)">7</div>
+    </div>
+
+    <div class=ninebox style="margin-left:500px;" id='000'>fff</div>
+
+</body>
+</html>
+
+
+    
+<script>    
+
+
+
+
+    // 鼠标事件参数方法 注意target获取对象
+    function game(event){
+        var obj=event.target;
+        var now=obj.id;
+        for(var i=1;i<=9;i++){
+            var tmp=document.getElementById(i);
+            if(tmp.innerText=='' && (i==parseInt(now)-1&&(i%3)!=0||i==parseInt(now)-3||i==parseInt(now)+1&&((i-1)%3)!=0||i==parseInt(now)+3)){
+                tmp.innerText=obj.innerText;
+                obj.innerText='';
+            }
+        }
+    }
+
+
+
+
+    // // this指针方法（未闭包很烦人）
+    // (function(){
+    // var chess=document.getElementById("second")
+    // var box=chess.getElementsByClassName('ninebox')
+    // // -3 -1 1 3 NAN
+    // for(var count=0;count<9;count++){
+    //     box[count].onclick=function(){
+    //         // alert()
+    //         // var obj=event.target;
+    //         // var now=obj.id;
+    //         now=this.id;
+    //         for(var i=1;i<=9;i++)
+    //         {
+    //             var tmp=document.getElementById(i);
+    //             if(tmp.innerText=='' && (i==parseInt(now)-1&&(i%3)!=0||i==parseInt(now)-3||i==parseInt(now)+1&&((i-1)%3)!=0||i==parseInt(now)+3)){
+    //                 tmp.innerText=this.innerText;
+    //                 this.innerText='';
+    //             }
+    //         }
+    //     }
+    // }})
+
+
+    function ninebox1(){
+        var box1=document.getElementById('box1');
+        var box2=document.getElementById('box2');
+        var box4=document.getElementById('box4');
+        if(box2.innerText==''){
+            box2.innerText=box1.innerText;
+            box1.innerText='';
+        }
+        if(box4.innerText==''){
+            // alert(box4.innerText)
+            box4.innerText=box1.innerText;
+            box1.innerText='';
+        }
+    }
+    function ninebox2(){
+        var box1=document.getElementById('box1');
+        var box2=document.getElementById('box2');
+        var box3=document.getElementById('box3');
+        var box5=document.getElementById('box5');
+        if(box1.innerText==''){
+            box1.innerText=box2.innerText;
+            box2.innerText='';
+        }
+        if(box3.innerText==''){
+            // alert(box4.innerText)
+            box3.innerText=box2.innerText;
+            box2.innerText='';
+        }
+        if(box5.innerText==''){
+            // alert(box4.innerText)
+            box5.innerText=box2.innerText;
+            box2.innerText='';
+        }
+    }
+    function ninebox3(){
+        var box3=document.getElementById('box3');
+        var box2=document.getElementById('box2');
+        var box6=document.getElementById('box6');
+        if(box2.innerText==''){
+            box2.innerText=box3.innerText;
+            box3.innerText='';
+        }
+        if(box6.innerText==''){
+            // alert(box4.innerText)
+            box6.innerText=box3.innerText;
+            box3.innerText='';
+        }
+    }
+    function ninebox4(){
+        var box1=document.getElementById('box1');
+        var box4=document.getElementById('box4');
+        var box7=document.getElementById('box7');
+        var box5=document.getElementById('box5');
+        if(box1.innerText==''){
+            box1.innerText=box4.innerText;
+            box4.innerText='';
+        }
+        if(box7.innerText==''){
+            // alert(box4.innerText)
+            box7.innerText=box4.innerText;
+            box4.innerText='';
+        }
+        if(box5.innerText==''){
+            // alert(box4.innerText)
+            box5.innerText=box4.innerText;
+            box4.innerText='';
+        }
+    }
+    function ninebox5(){
+        var box2=document.getElementById('box2');
+        var box5=document.getElementById('box5');
+        var box6=document.getElementById('box6');
+        var box5=document.getElementById('box5');
+        var box8=document.getElementById('box8');
+        if(box2.innerText==''){
+            box2.innerText=box5.innerText;
+            box5.innerText='';
+        }
+        if(box4.innerText==''){
+            // alert(box5.innerText)
+            box4.innerText=box5.innerText;
+            box5.innerText='';
+        }
+        if(box6.innerText==''){
+            // alert(box5.innerText)
+            box6.innerText=box5.innerText;
+            box5.innerText='';
+        }
+        if(box8.innerText==''){
+            // alert(box5.innerText)
+            box8.innerText=box5.innerText;
+            box5.innerText='';
+        }
+    }
+    function ninebox6(){
+        var box3=document.getElementById('box3');
+        var box6=document.getElementById('box6');
+        var box9=document.getElementById('box9');
+        var box5=document.getElementById('box5');
+        if(box3.innerText==''){
+            box3.innerText=box6.innerText;
+            box6.innerText='';
+        }
+        if(box9.innerText==''){
+            // alert(box6.innerText)
+            box9.innerText=box6.innerText;
+            box6.innerText='';
+        }
+        if(box5.innerText==''){
+            // alert(box6.innerText)
+            box5.innerText=box6.innerText;
+            box6.innerText='';
+        }
+    }
+    function ninebox7(){
+        var box7=document.getElementById('box7');
+        var box8=document.getElementById('box8');
+        var box4=document.getElementById('box4');
+        if(box8.innerText==''){
+            box8.innerText=box7.innerText;
+            box7.innerText='';
+        }
+        if(box4.innerText==''){
+            // alert(box4.innerText)
+            box4.innerText=box7.innerText;
+            box7.innerText='';
+        }
+    }
+    function ninebox8(){
+        var box7=document.getElementById('box7');
+        var box8=document.getElementById('box8');
+        var box9=document.getElementById('box9');
+        var box5=document.getElementById('box5');
+        if(box7.innerText==''){
+            box7.innerText=box8.innerText;
+            box8.innerText='';
+        }
+        if(box9.innerText==''){
+            // alert(box4.innerText)
+            box9.innerText=box8.innerText;
+            box8.innerText='';
+        }
+        if(box5.innerText==''){
+            // alert(box4.innerText)
+            box5.innerText=box8.innerText;
+            box8.innerText='';
+        }
+    }
+    function ninebox9(){
+        var box9=document.getElementById('box9');
+        var box8=document.getElementById('box8');
+        var box6=document.getElementById('box6');
+        if(box8.innerText==''){
+            box8.innerText=box9.innerText;
+            box9.innerText='';
+        }
+        if(box6.innerText==''){
+            // alert(box6.innerText)
+            box6.innerText=box9.innerText;
+            box9.innerText='';
+        }
+    }
+
+    
+
+    function change1(){
+        var box1=document.getElementById("box1");
+        var box2=document.getElementById("box2");
+        box1.innerHTML="";
+        box2.innerHTML="<img src='../html/images/angle.jpg'>";
+        // alert(box1.innerHTML);
+    }
+    function change2(){
+        var box1=document.getElementById("box2");
+        var box2=document.getElementById("box1");
+        box1.innerHTML="";
+        box2.innerHTML="<img src='../html/images/angle.jpg'>";
+        // alert(box1.innerHTML);
+    } 
+</script>
