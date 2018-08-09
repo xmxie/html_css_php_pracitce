@@ -35,12 +35,11 @@
                 <ul>
                 <?php
                     $path='msg.txt';
-                    $omsg=trim(file_get_contents($path));
-                    $amsg=explode('#',$omsg);
-                    $msgNum=count($amsg)-1;
+                    $str=file_get_contents($path);
+                    $msg=json_decode($str);
+                    $msgNum=count($msg)-1;
                     for($i=$msgNum;$i>=0;$i--){
-                        $amsg[$i]=trim($amsg[$i]);
-                        echo '<li class=messageIn> <span>time</span><br><p>'.$amsg[$i].'</p></li>';
+                        echo '<li class=messageIn> <span>time</span><br><p>'.$msg[$i]->msg.'</p></li>';
                     }
                 ?>
                  <!--    <li class=messageIn><span>time</span><br><p>这里有一条留言<p></li>
@@ -99,11 +98,12 @@
     if(isset($_POST['sbmt'])){
         if($_POST['yzm']=='takakvp'){
             $path='msg.txt';
-            $omsg=trim(file_get_contents($path));
-            // echo '<script>alert("'.$omsg.'")</script>';
-            $nmsg='#'.$_POST['msg'];
-            $omsg=trim($omsg.$nmsg);
-            $rst=file_put_contents($path,$omsg);
+            $str=trim(file_get_contents($path));
+            $msg=json_decode($str);
+            $nmsg['msg']=$_POST['msg'];
+            $msg[]=$nmsg;
+            $str=json_encode($msg);
+            $rst=file_put_contents($path,$str);
             if($rst){
                 echo '<script>alert("留言成功")</script>';
             }
@@ -111,6 +111,4 @@
             echo '<script>alert("验证码错误！")</script>';
         }
     }
-
-
 ?>

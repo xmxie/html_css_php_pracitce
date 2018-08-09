@@ -8,7 +8,7 @@
     <title>Document</title>
     <style>
         .main{width: 500px;height: 200px;border:1px solid black;margin:0 auto;}
-        .main p{width:100%;padding-left:100px;}
+        .main p{width:100%;text-align:center}
         .main p:last-child{text-align:center;padding-left:0px;}
     </style>
 </head>
@@ -23,11 +23,15 @@
     <div class=main>
 
         <!-- 登录部分 -->
-       <!--  <form action="" method='post'>
-            <p>用户名<input type="text" name='usr'></p>
-            <p>密&nbsp;&nbsp;&nbsp;码<input type="password" name='pwd'></p>
+        <form action="" method='post'>
+            <p>用户名<input type="text" name='usr'  disabled="disabled"
+            value=<?php if(isset($_COOKIE['usr'])){echo $_COOKIE['usr'];}?>
+            /></p>
+            <p>密&nbsp;&nbsp;&nbsp;&nbsp;码<input type="password" name='pwd'
+            value=<?php if(isset($_COOKIE['pwd'])){echo $_COOKIE['pwd'];}?>></p>
+            <p ><input type="checkbox" name='rmb'>记住密码</p>
             <p>
-                验证码<input type="text" name='yzm'> 
+                <!-- 验证码<input type="text" name='yzm'>  -->
                 <?php
                    /*  $yzm='';
                     function test($count=4,$type=0){
@@ -54,26 +58,38 @@
                 ?> 
             </p>
             <p><input type="submit" value="提交" name='up'></p>
-        </form>-->
+        </form>
 
         <!-- 注册部分 -->
-        <form action="" method='post'>
+       <!--  <form action="" method='post'>
             <p>用户名<input type="text" name='usr'></p>
-            <p>密&nbsp;&nbsp;&nbsp;码<input type="password" name='pwd'></p>
+            <p>密&nbsp;&nbsp;&nbsp;&nbsp;码<input type="password" name='pwd'></p>
             <p>
-                <!-- 验证码<input type="text" name='yzm'>  -->
+                验证码<input type="text" name='yzm'> 
                 <?php
                     // test(rand(4,8),rand(0,3));
                     // echo '<br>'.$yzm;
                 ?>
             <p><input type="submit" value="注册" name='up'></p>
-        </form>
+        </form> -->
         
     </div>
 </body>
 </html>
 <?php
     function login($usr,$pwd){//登录验证
+        
+        
+        if(isset($_COOKIE['test'])){
+            setcookie("test",$_COOKIE['test']+1);
+            echo $_COOKIE['test'];
+        }else{
+            setcookie("test",1);
+            echo $_COOKIE['test'];
+        }
+
+
+
         $oMes=trim(file_get_contents("login.txt"));
         $aMes=explode('#',$oMes);
         $count=count($aMes);
@@ -87,6 +103,15 @@
             if($usr==$rMes[$i][0]&&$pwd==$rMes[$i][1]){
                 $success=true;
             }
+        }
+        if(isset($_POST['rmb'])){
+            $date=time()+3600;
+            setcookie('usr',$_POST['usr'],$date);
+            setcookie('pwd',$_POST['pwd'],$date);
+        }else{
+            $date=time()-3600;
+            setcookie('usr',$_POST['usr'],$date);
+            setcookie('pwd',$_POST['pwd'],$date);
         }
         if($success){
             echo 'success';
@@ -157,9 +182,9 @@
         //登录开始
        
         
-        // login($usr,$pwd);
+        login($usr,$pwd);
         // 注册开始
-        regisit($usr,$pwd);
+        // regisit($usr,$pwd);
     }
         
 ?>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册页</title>
+    <link rel="stylesheet" href="./css/global.css">
+</head>
+<body>
+    <?php
+        include_once 'function.php';
+        if(isset($_POST['register'])){
+            $usr=$_POST['usr'];
+            $pwd=$_POST['pwd'];
+            $pwd2=$_POST['pwd2'];
+            register($usr,$pwd,$pwd2); 
+        }
+    ?>
+
+    <div id=content>
+        <div id='head'>
+            <img id='head_img' src="./images/top_r1_c1.jpg" alt="">
+            <p>游客你好！您还没有<a href="login.php">登录</a>，若您不是会员请先免费<a href="register.php">注册</a></p>
+            <ul id='head_ioc'>
+                <li id='ioc_1'><a href="message.php">留言板</a></li>
+                <li id='ioc_2'><a href="">订阅</a></li>
+                <li id='ioc_3'><a href="">加入收藏</a></li>
+                <li id='ioc_4'><a href="">论坛</a></li>
+                <li id='ioc_5'><a href="">English</a></li>
+            </ul>
+            <ul id='nav'>
+                <li><a href="">关于分会</a></li>
+                <li><a href="">行业动态</a></li>
+                <li><a href="">学术交流</a></li>
+                <li><a href="">业务合作</a></li>
+                <li><a href="">历届年会</a></li>
+                <li><a href="">会员之家</a></li>
+            </ul>
+        </div>
+        <div class=register>
+            <div class=loginbar>
+                <div class=loginbar_title>
+                    <h4>免费注册</h4>&nbsp; Register
+                </div>
+                <form action="" method="post">
+                    <div class=loginbar_input>&nbsp;&nbsp;&nbsp;&nbsp;用户名 <input type="text"  name='usr'>
+                     <font class=gray>3到14位的中文字符、英文字符、数字组成</font> </div>
+                    <div class=loginbar_input>电子邮箱 <input type="text"> <font class=gray>请准确输入你的邮箱</font></div>
+                    <div class=loginbar_input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码 <input type="password"name='pwd'>
+                     <font class=gray>请输入密码</font></div>
+                    <div class=loginbar_input>确认密码 <input type="password" name='pwd2'> <font class=gray>请输入密码</font></div>
+                    <div class=loginbar_input>&nbsp;&nbsp;&nbsp;&nbsp;验证码 <input type="text">
+                     <font class=gray>请输入验证码</font></div>
+                    <div class="yzm"><img src="./images/yzm.jpg">看不清？<a href="">刷新</a></div>
+                    <div class=loginbar_bottom >
+                        <input type='submit' class=loginbar_sure name='register' value='注册'>
+                    </div>
+                 </form>
+            </div>
+                <img src="./images/login_page_img.jpg" class="loginad">
+        </div>
+        <div id='bottom'>
+            <img src="./images/footer_logo.jpg" alt="">
+            <p>地址：上海市冰河路151号（201203）&nbsp;&nbsp;电话：86--51320288-5427/5415&nbsp;&nbsp;传真：2654-56456-41563</p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var login=document.getElementsByTagName("input");
+    for(var c=0;c<login.length;c++){
+        login[c].onfocus=function(){this.style.background="url('./images/login_page_r3_c3.jpg') no-repeat"}
+        login[c].onblur=function(){this.style.background="url('./images/login_page_r5_c3.jpg') no-repeat"}
+    }
+</script>

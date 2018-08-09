@@ -6,9 +6,17 @@ d <input type='text' value=3><br>
 <button onclick=put()>确认</button>
 <p>相等时a>b>c>d</p> -->
 <?php
+    $str='fadadfa.jpg';
+    $type='jpg';
+    echo str_replace($type,'',$str).'<br>';
+    echo $str;
 
 
-    $a =999;
+    // $arr=['jpg','jpeg','png'];
+    // print_r(in_array('jpegg',$arr));
+
+
+   /*  $a =999;
     $b =1000;
     $c =777;
     $d=666;
@@ -58,5 +66,5 @@ d <input type='text' value=3><br>
 
 
     $teststr=$strArr[0].$strArr[1].$strArr[2];
-    echo"<br>$teststr"
+    echo"<br>$teststr" */
 ?>
