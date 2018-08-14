@@ -6,10 +6,10 @@ d <input type='text' value=3><br>
 <button onclick=put()>确认</button>
 <p>相等时a>b>c>d</p> -->
 <?php
-    $str='fadadfa.jpg';
-    $type='jpg';
-    echo str_replace($type,'',$str).'<br>';
-    echo $str;
+    // $str='fadadfa.jpg';
+    // $type='jpg';
+    // echo str_replace($type,'',$str).'<br>';
+    // echo $str;
 
 
     // $arr=['jpg','jpeg','png'];

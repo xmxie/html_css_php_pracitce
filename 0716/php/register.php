@@ -27,12 +27,12 @@
 </body>
 </html>
 <?php
-    function regisit($usr,$pwd){//注册验证
+    function regisit($usr,$pwd){                        //注册验证
         global $yzm;
         echo $yzm;
         $usrLen=strlen($usr);                           //获取账号长度
         $pwdLen=strlen($pwd);                           //获取密码长度 
-        $yzmin=$_POST['yzm'];                          //获取输入验证码
+        $yzmin=$_POST['yzm'];                           //获取输入验证码
         $usrLegal='qwertyuiopasdfghjklzxcvbnm_';        
         $pwdLegal='0123456789';                         //指定规则
         $result=true;

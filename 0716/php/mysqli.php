@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>mysqli</title>
 </head>
 <body>
     <table border=1 width=300>
@@ -23,6 +23,8 @@
             $sql='delete from admin where id='.$_GET['id'].'';
             mysqli_query($link,$sql);
         }
+
+        
         // $sql="CREATE DATABASE tmp";
         // if(mysql_query($link,$sql)){
         //     echo '创建成功';
@@ -35,7 +37,7 @@
             <td>'.$row['ID'].'</td>
             <td>'.$row['user'].'</td>
             <td>'.$row['password'].'</td>
-            <td><a href=?id='.$row['ID'].'>删除</a></td>';
+            <td><a href=?id='.$row['ID'].'>删除</a>/<a href=?alter='.$row['ID'].'>修改</a></td>';
         }
 
     
@@ -52,6 +54,9 @@
         }
         $del='delete from admin where id=1';
         $reslut=mysqli_query($link,$del);
+        if(isset($_GET['alter'])){
+            echo '<script>location.href="alter.php?alter='.$_GET['alter'].'";</script>';
+        }
     ?>
     </table>
     <!-- <form action="" method="post">

@@ -1,0 +1,11 @@
+<?php
+    include_once "../model/admin_model.php";
+    include_once 'function.php';
+    if(isset($_POST['up'])){
+        $pwd=md5($_POST['pwd']);
+        $re=login($_POST['yzm'],$_POST['yzmin'],$_POST['usr'],$pwd);
+    }
+    $yzm=yzm();
+    echo '';
+    include_once "../view/login.php";
+?>

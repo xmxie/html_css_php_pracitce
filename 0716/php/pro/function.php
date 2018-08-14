@@ -36,8 +36,10 @@
         $result=mysqli_query($link,$sql);//读取数据库信息
         while($row=mysqli_fetch_array($result)){//检验账号密码
             if($row['user']==$usr&&$row['password']==$pwd){
+                session_start();
+                $_SESSION['usr']=$usr;
                 setcookie('usr',$usr,time()+3600);
-                tip('登录成功！','message.php');
+                tip('登录成功！','http://localhost/html_css_php_pracitce/0716/php/frame/frame.php');
                 return 1;
             }
         }
@@ -154,13 +156,11 @@
         $str=json_encode($nmsg);
         file_put_contents(PATH,$str);
     }
-    function footPage($path,$fname,$listNum=1){
-        $str=file_get_contents($path);
-        $msg=json_decode($str);
+    function footPage($msg,$listNum=1){
         $count=count($msg);
         $pages=ceil($count/$listNum);
-        if(isset($_GET[$fname])){
-            $page=$_GET[$fname];
+        if(isset($_GET['page'])){
+            $page=$_GET['page'];
         }else{
             $page=1;
         }
@@ -169,6 +169,10 @@
             echo '<li><a href="?page='.$i.'">'.$i.'</a></li>';
         }
         echo '<li><a href="?page='.nextPage($page,$pages).'">下一页</a></li>';
+
+
+        // $str=file_get_contents($path);
+        // $msg=json_decode($str);
     }
     function lastPage($page){
         if($page<=1){
@@ -212,10 +216,10 @@
 
         for($i=$start;$i<=$end;$i++){
             if($row[$i]['align']==1){
-                echo '<li class=messageBack> <span>time</span><br><p>'.$row[$i]['msg'].'</p></li>';
+                echo '<li class=messageBack> <span>用户'.$row[$i]['user'].' 于'.$row[$i]['time'].'</span><br><p>'.$row[$i]['msg'].'</p></li>';
             }
             else{
-            echo '<li class=messageIn> <span>time</span><br><p>'.$row[$i]['msg'].'</p></li>';
+            echo '<li class=messageIn> <span>用户 '.$row[$i]['user'].' 于 '.$row[$i]['time'].'</span><br><p>'.$row[$i]['msg'].'</p></li>';
             }
         }
 
@@ -259,7 +263,7 @@
             $nstr=$_POST[$msgid];
             $align=0;
         }
-        $add="insert into  `test0716`.`msg` (`ID` ,`msg` , `align`) values (NULL ,  '".$nstr."',  '".$align."');";
+        $add="insert into  `test0716`.`msg` (`ID` ,`msg` , `align`,time,user) values (NULL ,  '".$nstr."',  '".$align."',$t);";
         $result=mysqli_query($link,$add);
         if($result){
             tip('留言成功');
