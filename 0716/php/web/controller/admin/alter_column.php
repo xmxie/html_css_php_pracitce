@@ -1,0 +1,30 @@
+<?php
+    include_once "../../config/config.php";
+    $table='column';
+    if(isset($_SESSION['id'])){
+        $adminId=$_SESSION['id'];
+        $admin=$_COOKIE['user'];
+    }else{
+        tip('请先登录','login.php');
+    }
+    if(isset($_GET['alter'])){
+        $id=$_GET['alter'];
+        $column=getOne($id,$table);
+    }else{
+        tip('请选择需要修改的留言','book.php');
+    }
+    if(isset($_POST['up'])){
+        $data['name']=$_POST['name'];
+        $data['time']=time();
+        $data['sequence']=$_POST['sequence'];
+        $data['describe']=$_POST['describe'];
+        $data['display']=$_POST['display'];
+        $re=update($id,$data,$table);
+        if($re){
+            tip('修改成功','list_column.php');
+        }else{
+            tip('修改失败','');
+        }
+    }
+    include_once VIEW."admin/alter_column.php";
+?>

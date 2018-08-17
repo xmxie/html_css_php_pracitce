@@ -1,4 +1,5 @@
 <?php
+    header("content-type:text/html; charstet=uft-8");
     include_once "../model/admin_model.php";
     include_once "../function/function.php";
     if(isset($_GET['delete'])){

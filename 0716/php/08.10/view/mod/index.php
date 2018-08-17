@@ -23,7 +23,6 @@
   <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
   <h2><span class="icon-user"></span>基本设置</h2>
   <ul style="display:block">
-    <li><a href="list.php" target="right"><span class="icon-caret-right"></span>查看用户</a></li>
     <li><a href="pass.php" target="right"><span class="icon-caret-right"></span>修改密码</a></li>
     <li><a href="page.html" target="right"><span class="icon-caret-right"></span>单页管理</a></li>  
     <li><a href="adv.html" target="right"><span class="icon-caret-right"></span>首页轮播</a></li>   
@@ -32,6 +31,8 @@
   </ul>   
   <h2><span class="icon-pencil-square-o"></span>栏目管理</h2>
   <ul>
+    <li><a href="list.php" target="right"><span class="icon-caret-right"></span>查看用户</a></li>
+    <li><a href="register.php" target="right"><span class="icon-caret-right"></span>添加用户</a></li>
     <li><a href="list.html" target="right"><span class="icon-caret-right"></span>内容管理</a></li>
     <li><a href="add.html" target="right"><span class="icon-caret-right"></span>添加内容</a></li>
     <li><a href="cate.html" target="right"><span class="icon-caret-right"></span>分类管理</a></li>        

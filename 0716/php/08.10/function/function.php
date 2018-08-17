@@ -37,13 +37,14 @@
                 return false;
             }
         }
-        $data['img']=upload($img);
+        $data['img']=upload($data['img']);
+        // print_r($data['img']);
         $re=insert($data);
             if($re){
-                tip2('注册成功','login.php');
+                tip('注册成功');
                 return 1;
             }else{
-                tip2('注册失败','');
+                tip('注册失败','');
                 return false;
             }
     }
@@ -73,16 +74,17 @@
         $count=count($data);
         for($i=0;$i<$count;$i++){
 
-            echo '
-            <tr>
-                <td>'.$data[$i]['ID'].'</td>
-                <td><img src="'.$data[$i]['img'].'" alt=""></td>
-                <td>'.$data[$i]['user'].'</td>
-                <td>'.$data[$i]['name'].'</td>
-                <td>'.date("Y-m-d",$data[$i]['settime']).'</td>                
-                <td><a href=?id='.$data[$i]['ID'].'>删除</a>/
-                    <a href=?update='.$data[$i]['ID'].'>修改</td>
-            </tr>';
+        echo '
+        <tr>
+            <td style="text-align:left; padding-left:20px;">'.$data[$i]['ID'].'</td>
+            <td width="10%"><img src="'.$data[$i]['img'].'" alt="" width="60" height="60" style="border-radius: 60px"/></td>
+            <td>'.$data[$i]['user'].'</td>
+            <td>'.$data[$i]['name'].'</td>
+            <td>'.date("Y-m-d H:i:s" ,$data[$i]['settime']).'</td>
+            <td><div class="button-group"> <a class="button border-main" href="alter.php?update='.$data[$i]['ID'].'"><span class="icon-edit"></span> 修改</a> 
+                <a class="button border-red" href="?delete='.$data[$i]['ID'].'" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> 
+            </div></td>
+        </tr>';
 
         }
     }
@@ -126,7 +128,7 @@
             <tr>
                 <td>'.$data[$i]['id'].'</td>
                 <td>'.$data[$i]['message'].'</td>     
-                <td>'.$data[$i]['time'].'</td>                           
+                <td>'.date("Y-m-d H:i:s",$data[$i]['time']).'</td>                           
                 <td> <a class="button border-red" href="?delete='.$data[$i]['id'].'" ><span class="icon-trash-o"></span> 删除</a>
                 <a class="button border-green" href="?repeat='.$data[$i]['id'].'" ><span class="icon-trash-o"></span> 回复</a></td>
             </tr>';

@@ -12,7 +12,7 @@
         mysqli_set_charset($link,'utf8');
         $result=mysqli_query($link,$sql);
         $row=null;
-        while($tmp=mysqli_fetch_array($result)){
+        while($tmp=mysqli_fetch_assoc($result)){
             $row[]=$tmp;
         }
         return $row;
@@ -25,12 +25,12 @@
     }
     function getGrp(){
         $link=linkdb();
-        mysqli_set_charset($link,'utf-8');
+        mysqli_set_charset($link,'utf8');
         $sql='select * from `group`';
         // return get($sql);
         $result=mysqli_query($link,$sql);
         $row=null;
-        while($tmp=mysqli_fetch_array($result)){
+        while($tmp=mysqli_fetch_assoc($result)){
             $row[]=$tmp;
         }
         return $row;
@@ -89,7 +89,7 @@
         $link=linkdb();
         $sql='select * from `admin` where id='.$id;
         $re=mysqli_query($link,$sql);
-        $data=mysqli_fetch_array($re);
+        $data=mysqli_fetch_assoc($re);
         return $data;
     }
     function getAGrp($id){
@@ -97,7 +97,7 @@
         mysqli_set_charset($link,'utf8');
         $sql='select * from `group` where id='.$id;
         $re=mysqli_query($link,$sql);
-        $data=mysqli_fetch_array($re);
+        $data=mysqli_fetch_assoc($re);
         return $data;
     }
     //修改某一个用户的信息

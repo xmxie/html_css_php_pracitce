@@ -5,14 +5,14 @@
     if(isset($_GET['update'])){
         echo '<script>location.href="update.php?update='.$_GET['update'].'";</script>';
     }
-    if(isset($_GET['id'])){
-        $re=delete($_GET['id']);
+    if(isset($_GET['delete'])){
+        $re=delete($_GET['delete']);
         if(!$re){
             tip('删除失败','list.php');
         }
     }
     if(isset($_GET['update'])){
-        echo ' <script>localtion.href="update.php"</script>';
+        echo ' <script>localtion.href="alter.php"</script>';
     }
     $data=getdt();
 
